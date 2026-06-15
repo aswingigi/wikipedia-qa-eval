@@ -54,10 +54,10 @@ and canaries (`eval/canaries.py`) are drafted for you to verify/edit.
 # 1. Gate: run the canaries (real judges on synthetic inputs). Prints every verdict and stops.
 python -m eval.run canaries
 # 2. After the gate passes, run the full eval (billed; writes results/<runid>-report.md + -cases.json):
-python -m eval.run full --concurrency 2
-# options: --prompt-version, --judge-a-version, --judge-b-version, --concurrency N
-# Use a low --concurrency (e.g. 2): the live MediaWiki API rate-limits (HTTP 429) under load,
-# which can degrade a run's retrieval. Defaults: worker oversearch_cut, judges baseline_plus_examples.
+python -m eval.run full
+# options: --prompt-version, --judge-a-version, --judge-b-version, --concurrency N (default 2)
+# Concurrency defaults to 2 because the live MediaWiki API rate-limits (HTTP 429) under load;
+# raise it only cautiously. Defaults: worker oversearch_cut, judges baseline_plus_examples.
 ```
 The canary gate is a hard stop: if any verdict ≠ its expected label it reports and exits non-zero —
 fix the judge prompt, never the expected label. Runs are single-sample (noise is noted in the report).

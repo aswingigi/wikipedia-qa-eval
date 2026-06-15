@@ -36,7 +36,7 @@ from eval.judges import JUDGE_MODEL, run_judge_a, run_judge_b
 from eval.metrics import CaseResult, aggregate, retrieved_chars
 
 RESULTS_DIR = Path("results")
-DEFAULT_CONCURRENCY = 8
+DEFAULT_CONCURRENCY = 2  # live MediaWiki API rate-limits (HTTP 429) under load; raise cautiously
 
 
 def _client():
