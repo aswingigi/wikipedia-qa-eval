@@ -164,7 +164,7 @@ EVAL_CASES: list[Case] = [
         question="What is the average distance from the Earth to the Moon, in kilometers?",
         question_class="numeric",
         reference="About 384,400 km (the Moon's average distance is roughly 384,399 km).",
-        memory_ok=True, needs_verification=False, category="well_known",
+        memory_ok=True, needs_verification=True, category="well_known",
     ),
 
     # ---- false premise (the question embeds a wrong assumption; a correct answer rejects it) ----
@@ -176,10 +176,10 @@ EVAL_CASES: list[Case] = [
         memory_ok=True, needs_verification=False, category="false_premise",
     ),
     Case(
-        id="fp_edison_lightbulb",
-        question="In what year did Thomas Edison invent the light bulb?",
+        id="fp_einstein_nobel_relativity",
+        question="For which theory did Albert Einstein win his Nobel Prize — his theory of relativity?",
         question_class="false_premise",
-        reference="False premise — Edison did not invent the light bulb. Multiple inventors preceded him; Joseph Swan independently developed a working incandescent bulb (lighting the Savoy Theatre, London, in 1881), while Edison developed a commercially practical, longer-lasting bulb around 1879. A correct answer rejects the 'invented it' premise rather than giving a single invention year.",
+        reference="False premise — Einstein's Nobel Prize was NOT for relativity. He received the 1921 Nobel Prize in Physics \"for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect\" (per Wikipedia). A correct answer rejects the relativity premise and identifies the photoelectric effect.",
         memory_ok=False, needs_verification=True, category="false_premise",
     ),
 
