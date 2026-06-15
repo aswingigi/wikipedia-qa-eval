@@ -15,7 +15,7 @@ import sys
 from dotenv import load_dotenv
 
 from agents.agent import WORKER_MODEL, run_agent
-from agents.prompts import WORKER_SYSTEM_PROMPT_CLOSED, WORKER_SYSTEM_PROMPT_OPEN
+from agents.prompts import DEFAULT_VERSION, available_versions, get_prompt
 from agents.wikipedia import SEARCH_WIKIPEDIA_TOOL
 
 
@@ -26,18 +26,21 @@ def main() -> int:
                         help="closed-book run with no retrieval (retrieval_necessity baseline)")
     parser.add_argument("--verbose", action="store_true",
                         help="print the full trace: each query, status, and snippet")
+    parser.add_argument("--prompt-version", default=DEFAULT_VERSION, choices=available_versions(),
+                        help=f"worker prompt version from agents/prompts.py (default: {DEFAULT_VERSION})")
     parser.add_argument("--model", default=WORKER_MODEL, help=f"worker model (default: {WORKER_MODEL})")
     args = parser.parse_args()
 
     load_dotenv()
 
-    if args.no_tools:
-        system_prompt, prompt_name, tools = WORKER_SYSTEM_PROMPT_CLOSED, "WORKER_SYSTEM_PROMPT_CLOSED", []
-    else:
-        system_prompt, prompt_name, tools = WORKER_SYSTEM_PROMPT_OPEN, "WORKER_SYSTEM_PROMPT_OPEN", [SEARCH_WIKIPEDIA_TOOL]
+    open_book = not args.no_tools
+    system_prompt = get_prompt(args.prompt_version, open_book=open_book)
+    tools = [SEARCH_WIKIPEDIA_TOOL] if open_book else []
 
     if not system_prompt.strip():
-        print(f"error: {prompt_name} is empty — author it in agents/prompts.py first.", file=sys.stderr)
+        book = "open" if open_book else "closed"
+        print(f"error: the {book}-book prompt for version {args.prompt_version!r} is empty — "
+              f"author it in agents/prompts.py.", file=sys.stderr)
         return 2
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("error: ANTHROPIC_API_KEY not set (put it in .env).", file=sys.stderr)
@@ -50,6 +53,7 @@ def main() -> int:
 
     print(trace.answer or "(no answer produced)")
     print()
+    print(f"prompt: {args.prompt_version} ({'open' if open_book else 'closed'}-book)")
     print(_search_summary(trace))
 
     if args.verbose:

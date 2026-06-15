@@ -39,7 +39,6 @@ paragraph, else sentence, else word boundary) with an ellipsis appended.
 from __future__ import annotations
 
 import json
-import urllib.error
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
@@ -59,11 +58,10 @@ TOOL_NAME = "search_wikipedia"
 SEARCH_WIKIPEDIA_TOOL = {
     "name": TOOL_NAME,
     "description": (
-        "Search English Wikipedia for the most relevant article intros. Use this whenever "
-        "answering needs facts you are not fully certain of — names, dates, numbers, niche or "
-        "recent topics. Returns up to a few results, each with the article title, URL, and a "
-        "truncated intro. Signals \"no results\" distinctly from a retrieval error; on no "
-        "results, rephrase and retry."
+        "Searches English Wikipedia and returns the top matching article intros for the query. "
+        "Each result has the article title, its URL, and a plain-text extract of the article's "
+        "intro section (truncated to a length cap). Returns an explicit \"no results\" signal "
+        "when the search matches no articles, which is distinct from a retrieval error."
     ),
     "input_schema": {
         "type": "object",

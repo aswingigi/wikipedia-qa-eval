@@ -15,19 +15,20 @@ pip install -r requirements.txt
 cp .env.example .env          # then put your real ANTHROPIC_API_KEY in .env
 ```
 
-## Author the worker prompts
-The worker system prompts are **yours to write**. `agents/prompts.py` ships two empty placeholders:
-
-- `WORKER_SYSTEM_PROMPT_OPEN`  — open-book run (the `search_wikipedia` tool is available).
-- `WORKER_SYSTEM_PROMPT_CLOSED` — closed-book run (tools off; the retrieval_necessity baseline).
-
-The CLI refuses to run until the prompt it needs is non-empty.
+## Worker prompts (versioned)
+The worker system prompts are **yours to write**, in `agents/prompts.py`, and they're versioned so
+you can A/B as you iterate. `WORKER_PROMPTS` maps a version name to a `PromptVersion(open, closed)`:
+an open-book prompt (the `search_wikipedia` tool is available) and a closed-book prompt (tools off;
+the retrieval_necessity baseline). A `baseline` version is provided — add new entries as you improve
+the prompt and select one with `--prompt-version`. The Phase-2 eval can sweep `available_versions()`.
+The CLI refuses to run if the selected version's prompt is empty.
 
 ## Run
 ```sh
 python -m cli.main "When was Alan Turing born?"      # open-book; prints answer + whether search was used
 python -m cli.main "..." --verbose                    # also print the full trace (queries + snippets)
 python -m cli.main "..." --no-tools                   # closed-book run (no retrieval)
+python -m cli.main "..." --prompt-version baseline    # pick a worker prompt version (default: baseline)
 ```
 
 ## Selftest (no API key)
@@ -47,7 +48,7 @@ agents/
   agent.py       run_agent(question, *, tools, system_prompt, client, ...) -> Trace. Manual tool-use
                  loop, search cap. At the cap it forces a final answer by dropping tools only and
                  reusing the given prompt (recorded as stop_reason="cap_hit").
-  prompts.py     worker prompt placeholders — you author these.
+  prompts.py     versioned worker prompts (WORKER_PROMPTS registry) — you author these.
 cli/
   main.py        the CLI demo (python -m cli.main).
 selftest.py      no-key live contract test.
