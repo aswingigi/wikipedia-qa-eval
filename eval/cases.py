@@ -1,16 +1,19 @@
-"""Eval cases — I DRAFT (references live-verified), you verify/edit before submission.
+"""Eval cases — I DRAFT (references live-verified 2026-06-15 against en.wikipedia.org), you verify/edit
+before submission.
 
 Authored FOR retrieval_necessity (not difficulty): name collisions/disambiguation, disputed/precise
 numerics, and — weighted heaviest — facts genuinely not in memory (post worker-cutoff recent events),
 plus answer-from-memory cases.
 
   - question_class ∈ {numeric, disambiguation, factual, false_premise, unanswerable} — the ONLY
-    classes the judges branch on (Judge B sees it; Judge A does not).
-  - category is an authoring/coverage tag the judges never see (recent_event, well_known,
-    name_collision, disputed_numeric, ...): it records why the case exists.
+    classes the judges branch on (Judge B sees it; Judge A does not). The real cases use
+    factual/numeric/disambiguation; false_premise/unanswerable are exercised by the canaries.
+  - category is an authoring/coverage tag the judges never see (recent_event, name_collision,
+    disputed_numeric, well_known): it records why the case exists.
   - memory_ok / needs_verification drive the search audit and the groundedness population.
 
-EVAL_CASES is populated in build milestone 2 with ~18 live-verified cases.
+Note: the Nile's length is genuinely disputed; the reference reflects Wikipedia's current figure
+(7,088 km), which is the ground truth Judge B scores against here.
 """
 from __future__ import annotations
 
@@ -28,4 +31,102 @@ class Case:
     category: str  # coverage tag (judges never see this)
 
 
-EVAL_CASES: list[Case] = []  # filled in milestone 2 (live-verified)
+EVAL_CASES: list[Case] = [
+    # ---- recent events (post worker-cutoff; needs_verification=True) ----
+    Case("re_winter_olympics_2026",
+         "Which Italian cities were the main hosts of the 2026 Winter Olympics, and when were the Games held?",
+         "factual",
+         "The 2026 Winter Olympics (Milano Cortina 2026) were co-hosted by Milan and Cortina d'Ampezzo, Italy, held 6–22 February 2026.",
+         memory_ok=False, needs_verification=True, category="recent_event"),
+    Case("re_nobel_literature_2025",
+         "Who won the 2025 Nobel Prize in Literature?",
+         "factual",
+         "The Hungarian novelist László Krasznahorkai won the 2025 Nobel Prize in Literature.",
+         memory_ok=False, needs_verification=True, category="recent_event"),
+    Case("re_nobel_peace_2025",
+         "Who was awarded the 2025 Nobel Peace Prize?",
+         "factual",
+         "María Corina Machado of Venezuela was awarded the 2025 Nobel Peace Prize.",
+         memory_ok=False, needs_verification=True, category="recent_event"),
+    Case("re_super_bowl_lx",
+         "Which team won Super Bowl LX, and which team did they defeat?",
+         "factual",
+         "The Seattle Seahawks won Super Bowl LX, defeating the New England Patriots 29–13.",
+         memory_ok=False, needs_verification=True, category="recent_event"),
+    Case("re_ucl_final_2025",
+         "Which club won the 2025 UEFA Champions League final, and what was the score?",
+         "factual",
+         "Paris Saint-Germain won the 2025 UEFA Champions League final, beating Inter Milan 5–0 in Munich on 31 May 2025.",
+         memory_ok=False, needs_verification=True, category="recent_event"),
+    Case("re_ucl_final_2026",
+         "Who won the 2026 UEFA Champions League final, and how?",
+         "factual",
+         "Paris Saint-Germain won the 2026 UEFA Champions League final, defeating Arsenal 4–3 on penalties after a 1–1 draw (after extra time) at the Puskás Aréna, Budapest, on 30 May 2026.",
+         memory_ok=False, needs_verification=True, category="recent_event"),
+    Case("re_wimbledon_2025_mens",
+         "Who won the men's singles title at the 2025 Wimbledon Championships?",
+         "factual",
+         "Jannik Sinner won the 2025 Wimbledon men's singles title, defeating Carlos Alcaraz in the final.",
+         memory_ok=False, needs_verification=True, category="recent_event"),
+    Case("re_oscars_98_host",
+         "Who hosted the 98th Academy Awards, held in March 2026?",
+         "factual",
+         "Conan O'Brien hosted the 98th Academy Awards (March 15, 2026), his second consecutive year as host.",
+         memory_ok=False, needs_verification=True, category="recent_event"),
+
+    # ---- disambiguation / name collisions ----
+    Case("dis_michael_i_jordan",
+         "The scientist Michael I. Jordan is a professor at which university, and what field is he best known for?",
+         "disambiguation",
+         "Michael I. Jordan is a professor at the University of California, Berkeley, and is a leading researcher in machine learning, statistics, and artificial intelligence (not the basketball player).",
+         memory_ok=False, needs_verification=True, category="name_collision"),
+    Case("dis_mercury_element",
+         "In chemistry, what are the chemical symbol and atomic number of the element mercury?",
+         "disambiguation",
+         "The element mercury has the chemical symbol Hg and atomic number 80 (distinct from the planet Mercury or the Roman deity).",
+         memory_ok=True, needs_verification=False, category="name_collision"),
+    Case("dis_georgia_capital",
+         "What is the capital of the country Georgia (not the U.S. state)?",
+         "disambiguation",
+         "Tbilisi is the capital of the country Georgia (the U.S. state's capital is Atlanta).",
+         memory_ok=True, needs_verification=False, category="name_collision"),
+
+    # ---- disputed / precise numerics ----
+    Case("num_everest_height",
+         "What is the height of Mount Everest in meters, according to the most recent official survey?",
+         "numeric",
+         "8,848.86 m (29,031 ft 8.5 in), per the 2020 joint China–Nepal survey.",
+         memory_ok=False, needs_verification=True, category="disputed_numeric"),
+    Case("num_nile_length",
+         "How long is the Nile River, in kilometers?",
+         "numeric",
+         "Approximately 7,088 km (4,404 mi); Wikipedia lists the Nile as the longest river in the world. The length is disputed — some sources cite about 6,650 km.",
+         memory_ok=False, needs_verification=True, category="disputed_numeric"),
+
+    # ---- answer-from-memory (well known) ----
+    Case("mem_meters_in_km",
+         "How many meters are in a kilometer?",
+         "numeric",
+         "1,000 meters.",
+         memory_ok=True, needs_verification=False, category="well_known"),
+    Case("mem_us_capital",
+         "What is the capital of the United States?",
+         "factual",
+         "Washington, D.C.",
+         memory_ok=True, needs_verification=False, category="well_known"),
+    Case("mem_oxygen_symbol",
+         "What is the chemical symbol for oxygen?",
+         "factual",
+         "O.",
+         memory_ok=True, needs_verification=False, category="well_known"),
+    Case("mem_largest_planet",
+         "What is the largest planet in the Solar System?",
+         "factual",
+         "Jupiter.",
+         memory_ok=True, needs_verification=False, category="well_known"),
+    Case("mem_moon_distance",
+         "What is the average distance from the Earth to the Moon, in kilometers?",
+         "numeric",
+         "About 384,400 km (the Moon's average distance is roughly 384,399 km).",
+         memory_ok=True, needs_verification=False, category="well_known"),
+]
