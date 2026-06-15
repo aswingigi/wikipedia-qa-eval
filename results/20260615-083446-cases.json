@@ -1,0 +1,1066 @@
+[
+  {
+    "id": "dis_georgia_capital",
+    "question": "What is the capital of the country Georgia (not the U.S. state)?",
+    "question_class": "disambiguation",
+    "category": "name_collision",
+    "memory_ok": true,
+    "needs_verification": false,
+    "reference": "Tbilisi is the capital of the country Georgia (the U.S. state's capital is Atlanta).",
+    "open_answer": "The capital of the country **Georgia** is **Tbilisi**. It is also the largest city in the country, with over a third of Georgia's population of 3.9 million people living there. Georgia is located in the Caucasus region, at the intersection of Eastern Europe and West Asia.",
+    "closed_answer": "The capital of the country Georgia is **Tbilisi**.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer correctly identifies Tbilisi as the capital of the country Georgia, matching the reference.",
+    "correctness_rationale_closed": "The answer correctly identifies Tbilisi as the capital of the country Georgia, matching the reference.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All claims in the answer—Tbilisi as capital and largest city, over a third of the 3.9 million population living there, and Georgia's location in the Caucasus at the intersection of Eastern Europe and West Asia—are directly supported by snippet [3].",
+    "unsupported_claims": [],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "Georgia country capital city",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "List of national capitals",
+              "url": "https://en.wikipedia.org/wiki/List_of_national_capitals",
+              "extract": "This is a list of national capitals, including capitals of territories and dependencies, non-sovereign states including associated states and entities whose sovereignty is disputed.\nThe capitals included on this list are those associated with states or territories listed by the international standard ISO 3166-1, or that are included in the list of states with limited recognition.\nSovereign states and observer states within the United Nations are shown in bold text."
+            },
+            {
+              "title": "List of cities and towns in Georgia (country)",
+              "url": "https://en.wikipedia.org/wiki/List_of_cities_and_towns_in_Georgia_(country)",
+              "extract": "The following list of Georgian cities is divided into three lists for Georgia itself, and the disputed territories of Abkhazia and South Ossetia. Although not recognized by most countries, Abkhazia and South Ossetia have been partially de facto independent since, respectively, 1992 and 1991 and occupied by Russia since 2008 Russo-Georgian War."
+            },
+            {
+              "title": "Georgia (country)",
+              "url": "https://en.wikipedia.org/wiki/Georgia_(country)",
+              "extract": "Georgia is a country in the Caucasus region on the coast of the Black Sea. It is located at the intersection of Eastern Europe and West Asia, and is today generally regarded as part of Europe. It is bordered to the north and northeast by Russia; to the west by the Black Sea, to the south by Turkey and Armenia, and to the southeast by Azerbaijan. It has a population of 3.9 million, of which over a third live in Tbilisi, the capital and largest city. Georgians, who are native to the region and constitute the majority of the population, are ethno-linguistically distinct from all of their neighboring nations and primarily speak Georgian, a Kartvelian language that has no relation to any other language family in the world.\nGeorgia has been inhabited since prehistory and is known for hosting the world's earliest known sites of winemaking. The classical era saw the emergence of several kingdoms, such as Colchis and Iberia, that formed the nucleus of the modern Georgian state. In the early fourth century, Georgians officially adopted Christianity, which contributed to their unification under the Kingdom of Georgia. …"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "dis_mercury_element",
+    "question": "In chemistry, what are the chemical symbol and atomic number of the element mercury?",
+    "question_class": "disambiguation",
+    "category": "name_collision",
+    "memory_ok": true,
+    "needs_verification": false,
+    "reference": "The element mercury has the chemical symbol Hg and atomic number 80 (distinct from the planet Mercury or the Roman deity).",
+    "open_answer": "In chemistry, the element **mercury** has:\n\n- **Chemical symbol:** **Hg** (derived from its Latin name, *Hydrargyrum*, meaning \"liquid silver\")\n- **Atomic number:** **80**\n\nMercury is notable for being the only metallic element that is liquid at standard temperature and pressure, and it is also commonly known as **quicksilver**.",
+    "closed_answer": "The chemical symbol for mercury is **Hg** (from the Latin *Hydrargyrum*, meaning \"liquid silver\") and its atomic number is **80**.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer provides chemical symbol Hg and atomic number 80, matching the reference exactly.",
+    "correctness_rationale_closed": "The answer correctly provides the symbol Hg and atomic number 80, matching the reference.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "partially_grounded",
+    "groundedness_rationale": "The symbol Hg, atomic number 80, quicksilver name, and liquid-at-STP fact are all supported by snippet [1]. The Latin name 'Hydrargyrum' meaning 'liquid silver' is not mentioned anywhere in the trace.",
+    "unsupported_claims": [
+      "The symbol Hg is derived from its Latin name Hydrargyrum, meaning 'liquid silver'"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "mercury chemical element",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "Mercury (element)",
+              "url": "https://en.wikipedia.org/wiki/Mercury_(element)",
+              "extract": "Mercury is a chemical element; it has symbol Hg and atomic number 80. It is commonly known as quicksilver. A heavy, silvery d-block element, mercury is the only metallic element that is known to be liquid at standard temperature and pressure. As well as having the lowest freezing point, mercury has the lowest boiling point and subsequently the narrowest liquid state range of any metal at standard conditions.\nMercury occurs in deposits throughout the world mostly as cinnabar (mercuric sulfide). The red pigment vermilion is obtained by grinding natural cinnabar or synthetic mercuric sulfide. Exposure to mercury and mercury-containing organic compounds is toxic to the nervous system, immune system and kidneys of humans and other animals; mercury poisoning can result from exposure to water-soluble forms of mercury (such as mercuric chloride or methylmercury) either directly or through mechanisms of biomagnification. …"
+            },
+            {
+              "title": "Mercury",
+              "url": "https://en.wikipedia.org/wiki/Mercury",
+              "extract": "Mercury most commonly refers to:\n\nMercury (planet), the closest planet to the Sun\nMercury (element), a chemical element\nMercury (mythology), a Roman deity\nMercury or The Mercury may also refer to:"
+            },
+            {
+              "title": "Chemical symbol",
+              "url": "https://en.wikipedia.org/wiki/Chemical_symbol",
+              "extract": "Chemical symbols are the abbreviations used in chemistry, mainly for chemical elements, but also for functional groups, chemical compounds, and other entities. Element symbols for chemical elements, also known as atomic symbols, normally consist of one or two letters from the Latin alphabet and are written with the first letter capitalised."
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "dis_michael_i_jordan",
+    "question": "The scientist Michael I. Jordan is a professor at which university, and what field is he best known for?",
+    "question_class": "disambiguation",
+    "category": "name_collision",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "Michael I. Jordan is a professor at the University of California, Berkeley, and is a leading researcher in machine learning, statistics, and artificial intelligence (not the basketball player).",
+    "open_answer": "**Michael I. Jordan** is a professor at the **University of California, Berkeley**. He is best known for his work in **machine learning**, statistics, and artificial intelligence. He is considered one of the leading figures in machine learning and was reported by *Science* magazine in 2016 as the world's most influential computer scientist.",
+    "closed_answer": "Michael I. Jordan is a professor at the **University of California, Berkeley**. He is best known for his work in **machine learning and artificial intelligence**, and is particularly noted for contributions to probabilistic graphical models, Bayesian nonparametrics, and variational inference. He is widely regarded as one of the most influential researchers in the field of machine learning.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer correctly identifies UC Berkeley and machine learning, statistics, and AI, matching the reference exactly.",
+    "correctness_rationale_closed": "The answer correctly identifies UC Berkeley and machine learning/AI as his field, matching the reference. The additional detail about his specific contributions is accurate and consistent.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All claims in the answer are directly supported by snippet [1]: UC Berkeley professorship, focus on machine learning/statistics/AI, leading figure in machine learning, and the 2016 Science report calling him the world's most influential computer scientist.",
+    "unsupported_claims": [],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "Michael I. Jordan scientist professor",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "Michael I. Jordan",
+              "url": "https://en.wikipedia.org/wiki/Michael_I._Jordan",
+              "extract": "Michael Irwin Jordan  (born February 25, 1956) is an American scientist, professor at the University of California, Berkeley, research scientist at the Inria Paris, and researcher in machine learning, statistics, and artificial intelligence.\nJordan was elected a member of the National Academy of Engineering in 2010 for contributions to the foundations and applications of machine learning.\nHe is one of the leading figures in machine learning, and in 2016 Science reported him as the world's most influential computer scientist.\nIn 2022, Jordan won the inaugural World Laureates Association Prize in Computer Science or Mathematics, \"for fundamental contributions to the foundations of machine learning and its application.\""
+            },
+            {
+              "title": "Jordan Peterson",
+              "url": "https://en.wikipedia.org/wiki/Jordan_Peterson",
+              "extract": "Jordan Bernt Peterson (born 12 June 1962) is a Canadian psychologist, author, and media commentator. He received widespread attention in the late 2010s for his views on cultural and political issues. Often described as conservative, Peterson self-identifies as a classical liberal and traditionalist.\nBorn and raised in Alberta, he graduated from the University of Alberta with undergraduate degrees in political science and  psychology and earned his PhD in clinical psychology from McGill University. After researching and teaching at Harvard University, he returned to Canada in 1998 and became a professor of psychology at the University of Toronto. In 1999, he published his first book, Maps of Meaning: The Architecture of Belief, which became the basis for many of his subsequent lectures. The book combined psychology, mythology, religion, literature, philosophy and neuroscience to analyze systems of belief and meaning.\nIn 2016, Peterson released a series of videos on YouTube criticizing a proposed federal law, Bill C-16, that would prohibit discrimination against gender identity and expression. …"
+            },
+            {
+              "title": "List of modern Arab scientists and engineers",
+              "url": "https://en.wikipedia.org/wiki/List_of_modern_Arab_scientists_and_engineers",
+              "extract": "The following is a non-conclusive list of some notable modern Arab scientists and engineers. For medieval Arab scientists and scholars, see List of pre-modern Arab scientists and scholars"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "fp_einstein_nobel_relativity",
+    "question": "For which theory did Albert Einstein win his Nobel Prize — his theory of relativity?",
+    "question_class": "false_premise",
+    "category": "false_premise",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "False premise — Einstein's Nobel Prize was NOT for relativity. He received the 1921 Nobel Prize in Physics \"for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect\" (per Wikipedia). A correct answer rejects the relativity premise and identifies the photoelectric effect.",
+    "open_answer": "Actually, no! Einstein did **not** win the Nobel Prize for his theory of relativity. He was awarded the **1921 Nobel Prize in Physics** (presented in 1922) for **his discovery of the law of the photoelectric effect** — specifically his 1905 paper explaining how light can eject electrons from a material, which was foundational to quantum theory.\n\nInterestingly, the theory of relativity was so controversial and philosophically debated at the time that the Nobel Committee avoided it. The photoelectric effect, by contrast, was well-supported by experimental evidence. It's a common misconception that Einstein's most famous work — relativity — was the reason for his Nobel Prize.",
+    "closed_answer": "No, Einstein did not win the Nobel Prize for his theory of relativity. He was awarded the 1921 Nobel Prize in Physics for his discovery of the **law of the photoelectric effect**, which was foundational to quantum theory. He explained how light consists of discrete packets of energy (photons) that can eject electrons from a material when it is struck by light of sufficient frequency. This work was published in 1905, the same year as his special theory of relativity.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer explicitly rejects the false premise that Einstein won for relativity and correctly identifies the photoelectric effect and the 1921 prize, matching the reference.",
+    "correctness_rationale_closed": "The answer explicitly rejects the false premise that Einstein won for relativity and correctly identifies the 1921 Nobel Prize for the law of the photoelectric effect, matching the reference.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "The trace confirms Einstein won the 1921 Nobel Prize (awarded 1922) for the law of the photoelectric effect, tied to his 1905 paper, and that relativity was a subject of lively philosophical debate. All factual claims in the answer are supported by snippet [1].",
+    "unsupported_claims": [],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "Albert Einstein Nobel Prize",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "List of awards and honors received by Albert Einstein",
+              "url": "https://en.wikipedia.org/wiki/List_of_awards_and_honors_received_by_Albert_Einstein",
+              "extract": "In 1922 Albert Einstein was awarded the 1921 Nobel Prize in Physics, \"for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect\". This refers to his 1905 paper on the photoelectric effect, \"On a Heuristic Viewpoint Concerning the Production and Transformation of Light\", which was well supported by the experimental evidence by that time. The presentation speech began by mentioning \"his theory of relativity [which had] been the subject of lively debate in philosophical circles [and] also has astrophysical implications which are being rigorously examined at the present time\"."
+            },
+            {
+              "title": "Einstein–Bergson debate",
+              "url": "https://en.wikipedia.org/wiki/Einstein%E2%80%93Bergson_debate",
+              "extract": "On April 6, 1922, the physicist Albert Einstein and the philosopher Henri Bergson met at a gathering of the Société française de philosophie and debated the implications of the theory of relativity on the nature of time. \nBergson argued that while relativity is valid within the domain of physics, it cannot account for duration (la durée), or time as it is actually lived and experienced, and that philosophy still has indispensable contributions to make beyond what science can offer. Einstein rejected this, drawing a sharp distinction between physical and psychological time and dismissing any intermediate philosophical category, famously remarking: \"The time of the philosophers does not exist\" (French: Il n'y a donc pas un temps des philosophes). \nThe exchange, and the broader discussion it triggered, has had wide-ranging implications for Western cosmology and for the prestige of the humanities as compared to science. In 1934, Paul Valéry wrote that the meeting between these two thinkers was the \"grande affaire\" of the twentieth century."
+            },
+            {
+              "title": "Albert Einstein House",
+              "url": "https://en.wikipedia.org/wiki/Albert_Einstein_House",
+              "extract": "The Albert Einstein House at 112 Mercer Street in Princeton, Mercer County, New Jersey, United States, was the home of Albert Einstein from 1935 until his death in 1955. His second wife, Elsa Einstein, died in 1936 while living in this house."
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "fp_ten_percent_brain",
+    "question": "Why do humans only use 10 percent of their brains?",
+    "question_class": "false_premise",
+    "category": "false_premise",
+    "memory_ok": true,
+    "needs_verification": false,
+    "reference": "False premise — the 'ten percent of the brain' claim is a myth; humans use virtually all of their brain (different regions at different times). A correct answer rejects the premise rather than explaining it.",
+    "open_answer": "The idea that humans only use 10% of their brains is a **myth** — and a very well-known one at that! Here's the truth:\n\n### 🧠 The \"10% Brain\" Claim is False\n- **There is no scientific basis** for this claim. Brain imaging technologies like fMRI and PET scans show that **virtually all areas of the brain are active** and serve specific functions.\n- **All parts of the brain have a purpose.** Different regions handle different tasks — movement, vision, language, emotion, memory, and more. No large portion sits idle.\n- Over the course of a day, essentially **100% of the brain is used**, though not every region is maximally active at the exact same moment (just as you don't use every muscle simultaneously).\n\n### 📜 Where Did the Myth Come From?\n- The origin is unclear, but it has been **misattributed to famous figures** like Albert Einstein (with no credible evidence he ever said it).\n- It may stem from early **misinterpretations of neuroscience research**, such as studies on glial cells or findings that only ~10% of brain cells are neurons (the rest being support cells).\n- It has been **perpetuated by self-help movements** and pop culture (films like *Lucy* and *Limitless* are based on this premise) because it's an appealing idea — suggesting untapped human potential.\n\n### ✅ The Bottom Line\nThe brain is a highly efficient and expensive organ — it consumes about **20% of the body's energy** despite being only ~2% of its mass. Evolution would not preserve such a costly organ if 90% of it were useless. **You use all of your brain** — just not all at once.",
+    "closed_answer": "This is actually a myth. Humans do **not** use only 10% of their brains. We use virtually **all** of our brain, just not all regions simultaneously for every task.\n\nHere are a few reasons we know this:\n\n- **Brain imaging** (fMRI, PET scans) shows activity throughout the entire brain, with different regions activating depending on what you're doing.\n- **Evolution** wouldn't support maintaining a large, energy-expensive organ (the brain uses ~20% of the body's energy) if 90% were unused.\n- **Brain damage** to almost any area causes some loss of function — if 90% were idle, damage to those areas would have no effect.\n\nThe myth's origins are unclear, but it has been attributed (often incorrectly) to figures like Albert Einstein, and it's been perpetuated by self-help marketing and movies like *Lucy* (2014).\n\nThe reality is that the brain is a highly active, efficient organ, and essentially all of it serves important functions.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer explicitly identifies and rejects the false premise, correctly stating that the 10% claim is a myth and that humans use virtually all of their brain across different regions and times, matching the reference.",
+    "correctness_rationale_closed": "The answer correctly identifies the 10% claim as a myth and explains that humans use virtually all of their brain at different times, matching the reference and rejecting the false premise.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "partially_grounded",
+    "groundedness_rationale": "The trace supports that the 10% claim is a myth, that it was misattributed to Einstein, that all brain areas have a function and are used nearly all the time, and that the unlock notion rests in folklore not science. However, several specific claims—fMRI/PET imaging showing activity, the glial/neuron 10% origin, self-help and films Lucy/Limitless, the 20% energy and 2% mass figures, and the evolutionary cost argument—are not present in the trace.",
+    "unsupported_claims": [
+      "Brain imaging technologies like fMRI and PET scans show virtually all areas of the brain are active",
+      "It may stem from misinterpretations such as studies on glial cells or findings that only ~10% of brain cells are neurons",
+      "It has been perpetuated by self-help movements and films like Lucy and Limitless",
+      "The brain consumes about 20% of the body's energy despite being only ~2% of its mass",
+      "Evolution would not preserve such a costly organ if 90% of it were useless"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "10 percent of the brain myth",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "Ten-percent-of-the-brain myth",
+              "url": "https://en.wikipedia.org/wiki/Ten-percent-of-the-brain_myth",
+              "extract": "The ten-percent-of-the-brain myth or ninety-percent-of-the-brain myth states that humans generally use only one-tenth (or some other small fraction) of their brains. It has been misattributed to many famous scientists and historical figures, notably Albert Einstein. By extrapolation, it is suggested that a person may 'harness' or 'unlock' this unused potential and increase their intelligence.\nChanges in grey and white matter following new experiences and learning have been shown, but it has not yet been proven what the changes are. The popular notion that large parts of the brain remain unused, and could subsequently be \"activated\", rests in folklore and not science. Though specific mechanisms regarding brain function remain to be fully described—e.g. memory, consciousness—the physiology of brain mapping suggests that all areas of the brain have a function and that they are used nearly all the time."
+            },
+            {
+              "title": "The Myth of the One Percent",
+              "url": "https://en.wikipedia.org/wiki/The_Myth_of_the_One_Percent",
+              "extract": "The myth of the one percent refers to the 1975 study done by Wilson and King that asserted that human-chimpanzee divergence is about 1%. Humans share a common ancestor with chimpanzees, and the rapid evolution of chimpanzees and humans, along with gorillas and bonobos, has led to difficulties in creating an accurate lineage or tree topology. Chimpanzees and humans were found to be a monophyletic clade, leading to the question of how closely related the two are.\nThe assertion that human chimpanzee divergence is only 1% and subsequently the two species are 99% genetically identical was widely believed, but is now refuted by modern research that is able to look at entire genomes. It is now believed that the theory of 1% divergence only applies when looking at sequences that are aligned. After using resources not available in 1975, such as sequence data that is now available for multiple species, found multiple other aspects of the genome in humans and chimps that differ. This includes insertions and deletions as well as rearrangements and inversions of the genome. …"
+            },
+            {
+              "title": "Ten Percent (disambiguation)",
+              "url": "https://en.wikipedia.org/wiki/Ten_Percent_(disambiguation)",
+              "extract": "Ten Percent may refer to:"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "mem_largest_planet",
+    "question": "What is the largest planet in the Solar System?",
+    "question_class": "factual",
+    "category": "well_known",
+    "memory_ok": true,
+    "needs_verification": false,
+    "reference": "Jupiter.",
+    "open_answer": "The largest planet in the Solar System is **Jupiter**. It is a gas giant with a mass more than twice that of all the other planets combined. Jupiter has a diameter of about **139,820 km** — roughly 11 times the diameter of Earth — and is the fifth planet from the Sun.",
+    "closed_answer": "The largest planet in the Solar System is **Jupiter**. It is a gas giant with a mass more than twice that of all the other planets combined, and it has a diameter of about 142,984 km — roughly 11 times that of Earth.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer correctly identifies Jupiter as the largest planet, matching the reference, and provides accurate supporting details.",
+    "correctness_rationale_closed": "The answer correctly identifies Jupiter as the largest planet, matching the reference, with accurate supporting details.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "not_grounded",
+    "groundedness_rationale": "The trace confirms the Solar System has eight planets but never states that Jupiter is the largest, its mass relative to other planets, its diameter (~139,820 km), its comparison to Earth, or its position as the fifth planet from the Sun. The Jupiter-specific search failed with an error, so none of these specific claims are supported.",
+    "unsupported_claims": [
+      "The largest planet in the Solar System is Jupiter",
+      "It is a gas giant with a mass more than twice that of all the other planets combined",
+      "Jupiter has a diameter of about 139,820 km",
+      "It is roughly 11 times the diameter of Earth",
+      "Jupiter is the fifth planet from the Sun"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 2,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "largest planet in the Solar System",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "List of gravitationally rounded objects of the Solar System",
+              "url": "https://en.wikipedia.org/wiki/List_of_gravitationally_rounded_objects_of_the_Solar_System",
+              "extract": "This is a list of most likely gravitationally rounded objects (GRO) of the Solar System, which are objects that have a rounded, ellipsoidal shape due to their own gravity (but are not necessarily in hydrostatic equilibrium). Apart from the Sun itself, these objects qualify as planets according to common geophysical definitions of that term. The radii of these objects range over three orders of magnitude, from planetary-mass objects like dwarf planets and some moons to the planets and the Sun. This list does not include small Solar System bodies, but it does include a sample of possible planetary-mass objects whose shapes have yet to be determined. The Sun's orbital characteristics are listed in relation to the Galactic Center, while all other objects are listed in order of their distance from the Sun."
+            },
+            {
+              "title": "Solar System",
+              "url": "https://en.wikipedia.org/wiki/Solar_System",
+              "extract": "The Solar System is the gravitationally bound system of the Sun and the masses that orbit it, most prominently its eight planets, of which Earth is one. The Solar System is an isolated single-star planetary system (not part of a larger star system) within the Milky Way Galaxy. The system formed about 4.6 billion years ago when a dense region of a molecular cloud collapsed, creating the Sun and a protoplanetary disc from which the orbiting bodies assembled.\nThe Sun accounts for 99.86% of the Solar System's total mass. Inside the Sun's core, hydrogen is fused into helium, releasing energy that is emitted through the Sun's photosphere. This creates the heliosphere and a decreasing temperature gradient across the Solar System.\nThe next most massive objects of the system are the eight planets, which by definition dominate the orbits they occupy. Closest to the Sun in order of increasing distance are the terrestrial planets – Mercury, Venus, Earth and Mars. These four planets are part of the inner Solar System. Earth and Mars are the only planets that orbit within the Sun's habitable zone, in which sunlight can keep surface water liquid under atmospheric pressure. …"
+            },
+            {
+              "title": "List of Solar System objects by size",
+              "url": "https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size",
+              "extract": "This article includes a list of the most massive known objects of the Solar System and partial lists of smaller objects by observed mean radius. These lists can be sorted according to an object's radius and mass and, for the most massive objects, volume, density, and surface gravity, if these values are available.\nThese lists contain the Sun, the planets, dwarf planets, many of the larger small Solar System bodies (which includes the asteroids), all named natural satellites, and a number of smaller objects of historical or scientific interest, such as comets and near-Earth objects.\nMany trans-Neptunian objects (TNOs) have been discovered; in many cases their positions in this list are approximate, as there is frequently a large uncertainty in their estimated diameters due to their distance from Earth. There are uncertainties in the figures for mass and radius, and irregularities in the shape and density, with accuracy often depending on how close the object is to Earth or whether it has been visited by a probe.\nSolar System objects more massive than 1021 kilograms are known or expected to be approximately spherical. …"
+            }
+          ]
+        },
+        {
+          "query": "Jupiter planet",
+          "status": "error",
+          "error": "HTTPError: HTTP Error 429: Too Many Requests",
+          "results": []
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "mem_meters_in_km",
+    "question": "How many meters are in a kilometer?",
+    "question_class": "numeric",
+    "category": "well_known",
+    "memory_ok": true,
+    "needs_verification": false,
+    "reference": "1,000 meters.",
+    "open_answer": "There are **1,000 meters** in a kilometer. The prefix \"kilo-\" means 1,000 in the metric system, so a kilometer literally means \"1,000 meters.\"",
+    "closed_answer": "There are **1,000 meters** in a kilometer. The prefix \"kilo-\" means one thousand.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer states 1,000 meters, which matches the reference exactly.",
+    "correctness_rationale_closed": "The answer states 1,000 meters, which matches the reference exactly.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "not_grounded",
+    "groundedness_rationale": "The agent performed no searches, so there is no evidence in the trace to support any of the factual claims, even though they may be true in reality.",
+    "unsupported_claims": [
+      "There are 1,000 meters in a kilometer.",
+      "The prefix 'kilo-' means 1,000 in the metric system.",
+      "A kilometer literally means '1,000 meters.'"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 0,
+      "stop_reason": "voluntary",
+      "searches": []
+    },
+    "error": null
+  },
+  {
+    "id": "mem_moon_distance",
+    "question": "What is the average distance from the Earth to the Moon, in kilometers?",
+    "question_class": "numeric",
+    "category": "well_known",
+    "memory_ok": true,
+    "needs_verification": true,
+    "reference": "About 384,400 km (the Moon's average distance is roughly 384,399 km).",
+    "open_answer": "The average distance from the Earth to the Moon is approximately **384,399 kilometers** (about 238,854 miles). This is measured from the center of the Earth to the center of the Moon, and it represents the semi-major axis of the Moon's orbit. The distance isn't constant — it varies because the Moon's orbit is elliptical, ranging from about **356,500 km** at its closest point (perigee) to about **406,700 km** at its farthest point (apogee).",
+    "closed_answer": "The average distance from the Earth to the Moon is approximately **384,400 kilometers** (about 238,855 miles). This distance is known as the mean lunar distance and varies slightly because the Moon's orbit is elliptical.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer states ~384,399 km, matching the reference of about 384,400 km, with accurate additional context on perigee and apogee.",
+    "correctness_rationale_closed": "The answer states approximately 384,400 km, which matches the reference of about 384,400 km.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "partially_grounded",
+    "groundedness_rationale": "The 384,399 km (238,854 mi) average distance and the semi-major axis/elliptical orbit description are supported by snippets [1] and [2]. However, the specific perigee (356,500 km) and apogee (406,700 km) values are not present anywhere in the trace.",
+    "unsupported_claims": [
+      "The distance ranges from about 356,500 km at perigee (closest point)",
+      "The distance ranges to about 406,700 km at apogee (farthest point)"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "average distance Earth to Moon kilometers",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "Lunar distance",
+              "url": "https://en.wikipedia.org/wiki/Lunar_distance",
+              "extract": "The instantaneous Earth–Moon distance, or distance to the Moon, is the distance from the center of Earth to the center of the Moon. In contrast, the Lunar distance (LD or \n  \n    \n      \n        \n          Δ\n          \n            ⊕\n            L\n          \n        \n      \n    \n    {\\textstyle \\Delta _{\\oplus L}}\n  \n), or Earth–Moon characteristic distance, is a unit of measure in astronomy. More technically, it is the semi-major axis of the geocentric lunar orbit. The average lunar distance is approximately 385,000 km (239,000 mi), or 1.3 light-seconds. It is roughly 30 times Earth's diameter; to cover the same distance on earth would take a non-stop airplane flight more than two weeks. Around 389 lunar distances make up an astronomical unit (roughly the distance from Earth to the Sun).\nLunar distance is commonly used to express the distance to near-Earth object encounters. Lunar semi-major axis is an important astronomical datum. It has implications for testing gravitational theories such as general relativity  and for refining other astronomical values, such as the mass, radius, and rotation of Earth. …"
+            },
+            {
+              "title": "Moon",
+              "url": "https://en.wikipedia.org/wiki/Moon",
+              "extract": "The Moon is the only natural satellite of Earth. It orbits around Earth at an average distance of 384,399 kilometers (238,854 mi), a distance roughly 30 times the width of Earth. It completes an orbit (lunar month) in relation to Earth and the Sun (synodically) every 29.5 days. The Moon and Earth are bound by gravitational attraction, which is stronger on the sides facing each other. The resulting tidal forces are the main driver of Earth's tides, and have pulled the Moon to always face Earth with the same near side. This tidal locking effectively synchronizes the Moon's rotation period (lunar day) to its orbital period (lunar month).\nIn geophysical terms, the Moon is a planetary-mass object or satellite planet. Its mass is 1.2% that of the Earth, and its diameter is 3,474 km (2,159 mi), roughly one-quarter of Earth's (about as wide as the contiguous United States). Within the Solar System, it is larger and more massive than any known dwarf planet, and the fifth-largest and fifth–most massive moon, as well as the largest and most massive in relation to its parent planet. …"
+            },
+            {
+              "title": "Lagrange point",
+              "url": "https://en.wikipedia.org/wiki/Lagrange_point",
+              "extract": "In celestial mechanics, the Lagrange points (), also called the Lagrangian points or libration points, are points of equilibrium for small-mass objects under the gravitational influence of two massive orbiting bodies. Mathematically, this involves the solution of the restricted three-body problem.\nNormally, the two massive bodies exert an unbalanced gravitational force at a point, altering the orbit of any other celestial body at that point. At the Lagrange points, the gravitational forces of the two large bodies and the centrifugal pseudo-force balance each other. This can make Lagrange points an excellent location for satellites, as orbit corrections, and hence fuel requirements, needed to maintain the desired orbit are kept at a minimum. \nFor any combination of two orbital bodies, there are five Lagrange points, L1 to L5, all in the orbital plane of the two large bodies. There are five Lagrange points for the Sun–Earth system, and five different Lagrange points for the Earth–Moon system. …"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "mem_oxygen_symbol",
+    "question": "What is the chemical symbol for oxygen?",
+    "question_class": "factual",
+    "category": "well_known",
+    "memory_ok": true,
+    "needs_verification": false,
+    "reference": "O.",
+    "open_answer": "The chemical symbol for oxygen is **O**. It is a chemical element with atomic number 8, meaning each oxygen atom has 8 protons in its nucleus. Oxygen is a highly reactive nonmetal and is essential for most forms of life on Earth.",
+    "closed_answer": "The chemical symbol for oxygen is **O**.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer states the chemical symbol for oxygen is O, which matches the reference exactly. Additional accurate context is provided.",
+    "correctness_rationale_closed": "The answer states the chemical symbol for oxygen is O, which matches the reference exactly.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "not_grounded",
+    "groundedness_rationale": "The agent performed no searches, so the trace contains no evidence supporting any of the factual claims about oxygen's symbol, atomic number, or properties.",
+    "unsupported_claims": [
+      "The chemical symbol for oxygen is O",
+      "Oxygen has atomic number 8",
+      "Each oxygen atom has 8 protons in its nucleus",
+      "Oxygen is a highly reactive nonmetal",
+      "Oxygen is essential for most forms of life on Earth"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 0,
+      "stop_reason": "voluntary",
+      "searches": []
+    },
+    "error": null
+  },
+  {
+    "id": "mem_us_capital",
+    "question": "What is the capital of the United States?",
+    "question_class": "factual",
+    "category": "well_known",
+    "memory_ok": true,
+    "needs_verification": false,
+    "reference": "Washington, D.C.",
+    "open_answer": "The capital of the United States is **Washington, D.C.** (District of Columbia). It has served as the nation's capital since 1800 and is home to the three branches of the federal government, including the White House, the U.S. Capitol, and the Supreme Court.",
+    "closed_answer": "The capital of the United States is **Washington, D.C.** (District of Columbia).",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer states Washington, D.C., which matches the reference exactly, with accurate supporting details.",
+    "correctness_rationale_closed": "The answer states Washington, D.C., which matches the reference exactly.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "not_grounded",
+    "groundedness_rationale": "The agent performed no searches, so there is no trace evidence to support any of the factual claims in the answer. All substantive claims are therefore ungrounded.",
+    "unsupported_claims": [
+      "The capital of the United States is Washington, D.C.",
+      "It has served as the nation's capital since 1800.",
+      "It is home to the three branches of the federal government, including the White House, the U.S. Capitol, and the Supreme Court."
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 0,
+      "stop_reason": "voluntary",
+      "searches": []
+    },
+    "error": null
+  },
+  {
+    "id": "num_everest_height",
+    "question": "What is the height of Mount Everest in meters, according to the most recent official survey?",
+    "question_class": "numeric",
+    "category": "disputed_numeric",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "8,848.86 m (29,031 ft 8.5 in), per the 2020 joint China–Nepal survey.",
+    "open_answer": "According to the most recent official measurement, **Mount Everest is 8,848.86 meters (29,031 ft 8½ in)** above sea level. This height was determined in **2020** through a joint survey conducted by Nepalese and Chinese authorities, slightly revising the previously accepted height of 8,848 m.",
+    "closed_answer": "According to the most recent official survey — a joint China-Nepal measurement announced in 2020 — Mount Everest's height is **8,848.86 meters** (29,031.7 feet) above sea level.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer states 8,848.86 meters from the 2020 joint China-Nepal survey, exactly matching the reference.",
+    "correctness_rationale_closed": "The answer states 8,848.86 meters per the 2020 joint China-Nepal survey, exactly matching the reference.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "partially_grounded",
+    "groundedness_rationale": "The trace explicitly states Everest's height was most recently measured in 2020 through a joint survey by Nepalese and Chinese authorities as 8,848.86 m (29,031 ft 8½ in). The previous height of 8,848 m is widely known but not stated in the trace.",
+    "unsupported_claims": [
+      "slightly revising the previously accepted height of 8,848 m"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 2,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "Mount Everest height meters official survey",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "Denali",
+              "url": "https://en.wikipedia.org/wiki/Denali",
+              "extract": "Denali ( də-NAH-lee), federally designated as Mount McKinley, is the highest mountain peak in North America, with a summit elevation of 20,310 feet (6,190 m) above sea level. It is the tallest mountain in the world from base to peak on land, measuring 18,000 ft (5,500 m). With a topographic prominence of 20,156 feet (6,144 m) and a topographic isolation of 4,621.1 miles (7,436.9 km), Denali is the third most prominent and third-most isolated peak on Earth, after Mount Everest and Aconcagua. Located in the Alaska Range in the interior of the U.S. state of Alaska, Denali is the centerpiece of Denali National Park and Preserve.\nThe Koyukon people who inhabit the area around the mountain have referred to the peak as \"Denali\" for centuries. In 1896, a gold prospector named it \"Mount McKinley\" in support of then presidential candidate William McKinley, who later became the 25th president; McKinley's name was the official name recognized by the federal government of the United States from 1917 until 2015. …"
+            },
+            {
+              "title": "Eight-thousander",
+              "url": "https://en.wikipedia.org/wiki/Eight-thousander",
+              "extract": "The eight-thousanders are 14 mountains recognised by the International Mountaineering and Climbing Federation (UIAA) with summits that exceed 8,000 metres (26,247 ft) in elevation above sea level and are sufficiently independent of neighbouring peaks as measured by topographic prominence. There is no formally agreed-upon definition of prominence, however, and at times the UIAA has considered whether the list of 8,000-metre peaks should be expanded to 20 peaks by including the major satellite peaks of the canonical 14 eight-thousanders. All of the Earth's eight-thousanders are located in the Himalayan and Karakoram mountain ranges in Asia, and their summits lie in the altitude range known as the death zone, where atmospheric oxygen pressure is insufficient to sustain human life for extended periods of time.\nFrom 1950 to 1964, all 14 of the eight-thousanders were first summited by expedition climbers in the summer season (the first to be summited was Annapurna I in 1950, and the last was Shishapangma in 1964); from 1980 to 2021, all 14 were summited in the winter season (the first to be summited in winter was Mount Everest in 1980, and the last was K2 in 2021). …"
+            },
+            {
+              "title": "List of elevation extremes by country",
+              "url": "https://en.wikipedia.org/wiki/List_of_elevation_extremes_by_country",
+              "extract": "The following sortable table lists land surface elevation extremes by country or dependent territory.\nTopographic elevation is the vertical distance above the reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface."
+            }
+          ]
+        },
+        {
+          "query": "Mount Everest",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "Mount Everest",
+              "url": "https://en.wikipedia.org/wiki/Mount_Everest",
+              "extract": "Mount Everest (known locally as Sagarmāthā in Nepal and Qomolangma in Tibet Autonomous Region of China) is the highest mountain on Earth above sea level. It lies in the Mahalangur Himal sub-range of the Himalayas and marks part of the China–Nepal border at its summit. Its height was most recently measured in 2020 through a joint survey by Nepalese and Chinese authorities as 8,848.86 m (29,031 ft 8+1⁄2 in).\nMount Everest attracts many climbers, including highly experienced mountaineers. There are two main climbing routes, one approaching the summit from the southeast in Nepal (known as the standard route) and the other from the north in China. While not posing substantial technical climbing challenges on the standard route, Everest presents dangers such as altitude sickness, weather, and wind, as well as hazards from avalanches and the Khumbu Icefall. As of May 2024, 340 people have died on Everest. Over 200 bodies remain on the mountain and have not been removed due to the dangerous conditions.\nClimbers typically ascend only part of Mount Everest's elevation, as the mountain's full elevation is measured from the geoid, which approximates sea level. …"
+            },
+            {
+              "title": "List of people who died climbing Mount Everest",
+              "url": "https://en.wikipedia.org/wiki/List_of_people_who_died_climbing_Mount_Everest",
+              "extract": "At least 346 people  have died attempting to reach—or return from—the summit of Mount Everest which, at 8,848.86 m (29,031 ft 8+1⁄2 in), is Earth's highest mountain and a particularly desirable peak for mountaineers. This makes Everest the mountain with the most deaths, although it does not have the highest death rate, defined as the number of deaths for each person who successfully summits the mountain. The most recent years without known deaths on the mountain are 1977, in which only two people reached the summit, and 2020, when permits were suspended by Nepal because of the COVID-19 pandemic. …"
+            },
+            {
+              "title": "1996 Mount Everest disaster",
+              "url": "https://en.wikipedia.org/wiki/1996_Mount_Everest_disaster",
+              "extract": "The 1996 Mount Everest disaster occurred on 10–11 May 1996 when eight climbers were caught in a blizzard and died on Mount Everest while attempting to descend from the summit. Over that season, 12 people died trying to reach the summit, then the deadliest season on Mount Everest. It became the third deadliest after the 23 fatalities from avalanches caused by the April 2015 Nepal earthquake and the 16 fatalities of the 2014 Mount Everest avalanche. The 1996 disaster received widespread publicity, raised questions about the commercialisation of Everest, and prompted an enduring controversy about who and what was at fault for the disaster.\nNumerous climbers were at a high altitude on Everest during the storm including the Adventure Consultants team, led by Rob Hall, and the Mountain Madness team, led by Scott Fischer. While climbers died on both the North Face and South Col approaches, the events on the latter were more widely reported. On the South Col approach, four members of the Adventure Consultants expedition died, including Hall, while Fischer was the sole casualty of the Mountain Madness expedition. Three officers of the Indo-Tibetan Border Police died on the North Face. …"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "num_nile_length",
+    "question": "How long is the Nile River, in kilometers?",
+    "question_class": "numeric",
+    "category": "disputed_numeric",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "Approximately 7,088 km (4,404 mi); Wikipedia lists the Nile as the longest river in the world. The length is disputed — some sources cite about 6,650 km.",
+    "open_answer": "The Nile River is **7,088 kilometers** (4,404 miles) long, making it the longest river in the world. It flows northward through northeast Africa, emptying into the Mediterranean Sea.",
+    "closed_answer": "The Nile River is approximately **6,650 kilometers** (about 4,130 miles) long, making it one of the longest rivers in the world.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer states 7,088 km (4,404 mi), matching the reference figure exactly, and correctly notes it is the longest river.",
+    "correctness_rationale_closed": "The reference gives approximately 7,088 km but acknowledges the length is disputed, with some sources citing about 6,650 km, which is exactly the figure the answer provides. The answer falls within the referenced acceptable range.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All factual claims in the answer—the 7,088 km (4,404 mi) length, status as the longest river, northward flow through northeast Africa, and emptying into the Mediterranean Sea—are directly supported by snippet [2].",
+    "unsupported_claims": [],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "Nile River length",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "List of river systems by length",
+              "url": "https://en.wikipedia.org/wiki/List_of_river_systems_by_length",
+              "extract": "This is a list of the longest rivers on Earth. It includes river systems over 1,000 kilometres (620 mi) in length."
+            },
+            {
+              "title": "Nile",
+              "url": "https://en.wikipedia.org/wiki/Nile",
+              "extract": "The Nile is a major north-flowing river in northeast Africa which empties into the Mediterranean Sea. At 7,088 kilometers (4,404 mi) long, it is the longest river in the world, although the volume of water it carries is much smaller than other major rivers such as the Amazon or the Congo. The Nile has played a central role in the environmental, economic, and cultural history of Africa for millennia.\nThe Nile has two major tributaries: the White Nile and the Blue Nile. The White Nile is longer and is considered to be the headwaters, yet the Blue Nile contributes over twice the volume of the White Nile. The White Nile begins near Lake Victoria and flows through Uganda and South Sudan; while  the Blue Nile begins near Lake Tana in Ethiopia and flows into Sudan from the southeast. The two rivers meet at the Sudanese capital of Khartoum. From there, the Nile flows north through the Nubian Desert to Egypt's capital, Cairo, and finally empties into the Mediterranean Sea near Alexandria, where it has formed a large river delta.\nGeologically, the Nile is a young river and has followed its present course for about 15,000 years. Its drainage basin extends across eleven countries. …"
+            },
+            {
+              "title": "Nile crocodile",
+              "url": "https://en.wikipedia.org/wiki/Nile_crocodile",
+              "extract": "The Nile crocodile (Crocodylus niloticus) is a large crocodilian native to freshwater habitats in Africa, where it is present in 26 countries. It is widely distributed in sub-Saharan Africa, occurring mostly in the eastern, southern, and central regions of the continent, and lives in different types of aquatic environments such as lakes, rivers, swamps and marshlands. It occasionally inhabits deltas, brackish lakes and rarely also saltwater. Its range once stretched from the Nile Delta throughout the Nile River. Lake Turkana in Kenya has one of the largest undisturbed Nile crocodile populations.\nGenerally, the adult male Nile crocodile is between 3.5 and 5 m (11 ft 6 in and 16 ft 5 in) in length and weighs 225 to 750 kg (496 to 1,653 lb). However, specimens exceeding 6.1 m (20 ft) in length and 1,000 kg (2,200 lb) in weight have been recorded. It is the largest predator in Africa, and may be considered the second-largest extant reptile in the world, after the saltwater crocodile (Crocodylus porosus). Size is sexually dimorphic, with females usually about 30% smaller than males. The crocodile has thick, scaly, heavily armoured skin. …"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "re_nobel_literature_2025",
+    "question": "Who won the 2025 Nobel Prize in Literature?",
+    "question_class": "factual",
+    "category": "recent_event",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "The Hungarian novelist László Krasznahorkai won the 2025 Nobel Prize in Literature.",
+    "open_answer": "The **2025 Nobel Prize in Literature** was awarded to **László Krasznahorkai**, a Hungarian novelist born in 1954. He was recognized *\"for his compelling and visionary oeuvre that, in the midst of apocalyptic terror, reaffirms the power of art.\"* He is the second Hungarian Nobel laureate in Literature, after Imre Kertész, who won in 2002.",
+    "closed_answer": "The 2025 Nobel Prize in Literature had not yet been awarded as of my knowledge cutoff in early 2025. The Nobel Prizes are typically announced in October each year, so if you're asking after October 2025, I wouldn't have that information. I'd recommend checking a current news source for the answer.",
+    "correctness_open": "correct",
+    "correctness_closed": "incorrect",
+    "correctness_rationale_open": "The answer correctly identifies László Krasznahorkai, the Hungarian novelist, as the 2025 Nobel Prize in Literature winner, matching the reference exactly.",
+    "correctness_rationale_closed": "The reference states László Krasznahorkai won the 2025 Nobel Prize in Literature. The answer fails to provide this fact, citing a knowledge cutoff, which counts as incorrect for a factual question.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "Every factual claim in the answer—the laureate name, birth year, citation quote, and status as second Hungarian laureate after Imre Kertész (2002)—is directly supported by snippet [1].",
+    "unsupported_claims": [],
+    "necessity": "rescued",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "2025 Nobel Prize in Literature",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "2025 Nobel Prize in Literature",
+              "url": "https://en.wikipedia.org/wiki/2025_Nobel_Prize_in_Literature",
+              "extract": "The 2025 Nobel Prize in Literature was awarded to the Hungarian novelist László Krasznahorkai (born 1954) \"for his compelling and visionary oeuvre that, in the midst of apocalyptic terror, reaffirms the power of art.\" He is the second Hungarian Nobel laureate in Literature after Imre Kertész in 2002."
+            },
+            {
+              "title": "2026 Nobel Prize in Literature",
+              "url": "https://en.wikipedia.org/wiki/2026_Nobel_Prize_in_Literature",
+              "extract": "The 2026 Nobel Prize in Literature is an international literary prize established according to Alfred Nobel's will that will be announced by the Swedish Academy in Stockholm, Sweden, on 8 October 2026 and awarded on 10 December 2026."
+            },
+            {
+              "title": "List of Nobel laureates in Literature",
+              "url": "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Literature",
+              "extract": "The Nobel Prize in Literature (Swedish: Nobelpriset i litteratur) is awarded annually by the Swedish Academy to authors for outstanding contributions in the field of literature. It is one of the five Nobel Prizes established by the 1895 will of Alfred Nobel, which are awarded for outstanding contributions in chemistry, physics, literature, peace, and physiology or medicine. As dictated by Nobel's will, the award is administered by the Nobel Foundation and awarded by the Swedish Academy. Each recipient receives a medal, a diploma and a monetary award prize that has varied throughout the years. In 1901, the first laureate Sully Prudhomme received 150,782 SEK, which is equivalent to 8,823,637.78 SEK in January 2018. The award is presented in Stockholm at an annual ceremony on December 10, the anniversary of Nobel's death.\nAs of 2025, the Nobel Prize in Literature has been awarded to 122 individuals. 18 women have been awarded the Nobel Prize in Literature, the second highest number of any of the Nobel Prizes behind the Nobel Peace Prize. …"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "re_nobel_peace_2025",
+    "question": "Who was awarded the 2025 Nobel Peace Prize?",
+    "question_class": "factual",
+    "category": "recent_event",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "María Corina Machado of Venezuela was awarded the 2025 Nobel Peace Prize.",
+    "open_answer": "The **2025 Nobel Peace Prize** was awarded to **María Corina Machado** of Venezuela. The prize was announced on October 10, 2025, by the Norwegian Nobel Committee in Oslo. The committee praised her as *\"one of the most extraordinary examples of civilian courage in Latin America in recent times.\"*\n\nAt the time of the announcement, Machado was in hiding inside Venezuela due to fear of repression from Nicolás Maduro's government. She was able to secretly escape the country to attend the award ceremony in Oslo on December 10, 2025, where the prize was presented to her daughter on her behalf.",
+    "closed_answer": "The 2025 Nobel Peace Prize has not yet been awarded as of my knowledge cutoff (early 2025). The Nobel Peace Prize is typically announced in October each year, so if it has been announced, that would be after my knowledge cutoff date. I recommend checking a reliable news source for the most current information.",
+    "correctness_open": "correct",
+    "correctness_closed": "incorrect",
+    "correctness_rationale_open": "The answer correctly identifies María Corina Machado of Venezuela as the 2025 Nobel Peace Prize laureate, matching the reference.",
+    "correctness_rationale_closed": "The reference states María Corina Machado won the 2025 Nobel Peace Prize, but the answer declines to provide this, citing a knowledge cutoff. For a factual question, failing to provide the referenced fact is incorrect.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All factual claims in the answer—the recipient María Corina Machado, the October 10 announcement date, the Norwegian Nobel Committee in Oslo, the exact praise quote, her being in hiding fearing Maduro's government, secretly escaping the country, the December 10 ceremony, and the prize given to her daughter on her behalf—are directly supported by snippet [1].",
+    "unsupported_claims": [],
+    "necessity": "rescued",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "2025 Nobel Peace Prize",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "2025 Nobel Peace Prize",
+              "url": "https://en.wikipedia.org/wiki/2025_Nobel_Peace_Prize",
+              "extract": "The 2025 Nobel Peace Prize, an international peace prize established according to the will of Alfred Nobel, was announced on 10 October 2025 by the Norwegian Nobel Committee in Oslo, Norway. It was awarded to María Corina Machado of Venezuela. The prize was presented at the ceremony on 10 December 2025 in Oslo, given to her daughter on her behalf. The Norwegian Nobel Committee praised her as \"one of the most extraordinary examples of civilian courage in Latin America in recent times\".\nAt the time of the prize's announcement, Machado was in hiding inside Venezuela, fearing repression from the government of Nicolás Maduro. She secretly escaped the country to reach Oslo with the help of international allies, but vowed to return to Venezuela to continue opposing the Maduro regime. Machado said she dedicated her award to Donald Trump and after the 2026 United States intervention in Venezuela she gave him her Nobel medal as a recognition of his commitment to Venezuela's freedom, according to Machado."
+            },
+            {
+              "title": "2025 Nobel Prizes",
+              "url": "https://en.wikipedia.org/wiki/2025_Nobel_Prizes",
+              "extract": "The 2025 Nobel Prizes were awarded by the Nobel Foundation, based in Sweden, and the Norwegian Nobel Institute, based in Oslo, to 16 individuals. \nSix categories were awarded: Physics, Chemistry, Physiology or Medicine, Literature, Peace, and Economic Sciences."
+            },
+            {
+              "title": "2026 Nobel Peace Prize",
+              "url": "https://en.wikipedia.org/wiki/2026_Nobel_Peace_Prize",
+              "extract": "The 2026 Nobel Peace Prize is an international peace prize established according to Alfred Nobel's will that will be announced on 9 October 2026 by the Norwegian Nobel Committee in Oslo, Norway, and awarded on 10 December 2026."
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "re_oscars_98_host",
+    "question": "Who hosted the 98th Academy Awards, held in March 2026?",
+    "question_class": "factual",
+    "category": "recent_event",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "Conan O'Brien hosted the 98th Academy Awards (March 15, 2026), his second consecutive year as host.",
+    "open_answer": "The **98th Academy Awards**, held on **March 15, 2026**, at the Dolby Theatre in Hollywood, was hosted by comedian **Conan O'Brien**. It was his second consecutive time hosting the ceremony, after receiving acclaim for his hosting duties the previous year.",
+    "closed_answer": "My knowledge cutoff is early 2025, so I don't have information about the 98th Academy Awards, which would have been held in March 2026. I'm not able to provide details about that event.",
+    "correctness_open": "correct",
+    "correctness_closed": "incorrect",
+    "correctness_rationale_open": "The answer correctly identifies Conan O'Brien as host, matching the reference including the date and that it was his second consecutive year.",
+    "correctness_rationale_closed": "The reference states Conan O'Brien hosted the 98th Academy Awards. The answer refused to provide the fact, citing knowledge cutoff, which is incorrect for a factual question.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "The trace explicitly states the ceremony took place March 15, 2026, at the Dolby Theatre in Hollywood, and that Conan O'Brien returned to host for the second consecutive time after acclaim for hosting the previous year. All claims in the answer are supported.",
+    "unsupported_claims": [],
+    "necessity": "rescued",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "98th Academy Awards 2026",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "98th Academy Awards",
+              "url": "https://en.wikipedia.org/wiki/98th_Academy_Awards",
+              "extract": "The 98th Academy Awards ceremony, presented by the Academy of Motion Picture Arts and Sciences (AMPAS), took place on March 15, 2026, at the Dolby Theatre in Hollywood, Los Angeles. During the gala, the AMPAS presented the Academy Awards (commonly referred to as the Oscars) in 24 categories, honoring films released in 2025. The ceremony was televised in the United States by ABC and streamed on Hulu. Comedian Conan O'Brien returned to host the show for the second consecutive time, after receiving acclaim for hosting the previous year, with Raj Kapoor and Katy Mullan returning as executive producers for the third consecutive year, and Hamish Hamilton returning as director.\nIn related events, the Academy held its 16th Governors Awards ceremony at the Ray Dolby Ballroom of the Ovation Hollywood complex in Hollywood on November 16, 2025. The Academy Scientific and Technical Awards were presented by host Sofia Carson on April 28, 2026, in a ceremony at the Academy Museum of Motion Pictures in Los Angeles.\nOne Battle After Another won a leading six awards, including Best Picture and Best Casting, becoming the inaugural recipient for the latter category. …"
+            },
+            {
+              "title": "The Smashing Machine (2025 film)",
+              "url": "https://en.wikipedia.org/wiki/The_Smashing_Machine_(2025_film)",
+              "extract": "The Smashing Machine is a 2025 American biographical sports drama film, written and directed by Benny Safdie. It stars Dwayne Johnson as former amateur wrestler and MMA fighter Mark Kerr, alongside Emily Blunt as Kerr's girlfriend, with Ryan Bader, Bas Rutten and Oleksandr Usyk in supporting roles.\nThe Smashing Machine premiered at the 82nd Venice International Film Festival on September 1, 2025, where it won the Silver Lion. It was released in the United States on October 3 by A24, and received generally positive reviews from critics. The film was a box office bomb, grossing $21 million against a $50 million budget. It was nominated for Best Makeup and Hairstyling at the 98th Academy Awards. At the 83rd Golden Globe Awards, Johnson was nominated for Best Actor and Blunt was nominated for Best Supporting Actress."
+            },
+            {
+              "title": "List of oldest and youngest Academy Award winners and nominees",
+              "url": "https://en.wikipedia.org/wiki/List_of_oldest_and_youngest_Academy_Award_winners_and_nominees",
+              "extract": "This article lists the oldest and youngest Academy Award winners and nominees in the directing and acting award categories.\nThis list is current as of the 98th Academy Awards ceremony held on March 15, 2026, and is based on statistics documented in The Official Academy Awards Database."
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "re_super_bowl_lx",
+    "question": "Which team won Super Bowl LX, and which team did they defeat?",
+    "question_class": "factual",
+    "category": "recent_event",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "The Seattle Seahawks won Super Bowl LX, defeating the New England Patriots 29–13.",
+    "open_answer": "The **Seattle Seahawks** won Super Bowl LX, defeating the **New England Patriots** by a score of **29–13**. The game was played on February 8, 2026, at Levi's Stadium in Santa Clara, California. It was the Seahawks' second Super Bowl championship.",
+    "closed_answer": "Super Bowl LX has not yet been played as of my knowledge cutoff in early 2025. Super Bowl LIX was scheduled for February 9, 2025, and I don't have confirmed results for that game. I'm not able to provide the outcome of Super Bowl LX, as it would be a future event beyond my knowledge.",
+    "correctness_open": "correct",
+    "correctness_closed": "incorrect",
+    "correctness_rationale_open": "The answer states the Seattle Seahawks won Super Bowl LX, defeating the New England Patriots 29–13, which matches the reference exactly.",
+    "correctness_rationale_closed": "The reference states the Seattle Seahawks won Super Bowl LX, defeating the New England Patriots 29-13. The answer declines to provide this fact, which for a factual question counts as failing to provide the referenced fact.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All factual claims in the answer—Seahawks defeating the Patriots 29–13, the date and location at Levi's Stadium in Santa Clara, and it being the Seahawks' second championship—are directly supported by snippet [1].",
+    "unsupported_claims": [],
+    "necessity": "rescued",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "Super Bowl LX",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "Super Bowl LX",
+              "url": "https://en.wikipedia.org/wiki/Super_Bowl_LX",
+              "extract": "Super Bowl LX was an American football game played to determine the champion of the National Football League (NFL) for the 2025 season. The National Football Conference (NFC) champion Seattle Seahawks defeated the American Football Conference (AFC) champion New England Patriots 29–13. The game took place on February 8, 2026, at Levi's Stadium in Santa Clara, California, the second Super Bowl held in the stadium and the third held in the San Francisco Bay Area.\nThe Seahawks' victory was their second, previously having won 2013's Super Bowl XLVIII during their Legion of Boom era. Led by their Dark Side defense, they were making their fourth appearance with a 14–3 record and the NFC's top seed. The Patriots, who finished with a 14–3 record and the AFC's second seed, extended their record of appearances to 12. They were seeking a record seventh title and their first since the Brady–Belichick era after last winning 2018's Super Bowl LIII. The two franchises previously met in Super Bowl XLIX, which was won by the Patriots.\nSeattle scored the only points of the first three quarters, converting four field goals to take a 12–0 lead. …"
+            },
+            {
+              "title": "Super Bowl LX halftime show",
+              "url": "https://en.wikipedia.org/wiki/Super_Bowl_LX_halftime_show",
+              "extract": "The Super Bowl LX halftime show, officially known as the Apple Music Super Bowl LX Halftime Show for sponsorship purposes, took place on February 8, 2026, at Levi's Stadium in Santa Clara, California. It was headlined by Bad Bunny and featured guest appearances from Lady Gaga, Ricky Martin, and Los Pleneros de la Cresta. The performance marked the first time a Latino solo artist headlined the Super Bowl halftime show and the first halftime set performed almost entirely in Spanish. Martin is the first openly gay male Super Bowl halftime performer.\nThe show was broadcast across the US on NBC, Peacock, Telemundo, Universo, NFL+ and select NBC Sports digital platforms. It drew 128.2 million viewers domestically across all platforms—making it the fourth-most-watched halftime show in history—and attracted 4.8 million viewers on Telemundo, the network's largest audience for an American football broadcast. It was met with widespread critical acclaim, with critics praising the performance, production, tone, and themes. …"
+            },
+            {
+              "title": "List of Super Bowl champions",
+              "url": "https://en.wikipedia.org/wiki/List_of_Super_Bowl_champions",
+              "extract": "The Super Bowl is the annual American football game that determines the champion of the National Football League (NFL). The game culminates a season that begins in the previous calendar year, and is the conclusion of the NFL playoffs. The winner receives the Vince Lombardi Trophy. The contest is held in an American city, chosen three to four years beforehand, usually at warm-weather sites or domed stadiums. Since January 1971, the winner of the American Football Conference (AFC) Championship Game has faced the winner of the National Football Conference (NFC) Championship Game in the culmination of the NFL playoffs.\nBefore the 1970 merger between the American Football League (AFL) and the NFL, the two leagues met in four such contests. The first two were marketed as the \"AFL–NFL World Championship Game\", but were also casually referred to as \"the Super Bowl game\" during the television broadcast. Super Bowl III in January 1969 was the first such game that carried the \"Super Bowl\" moniker in official marketing; the names \"Super Bowl I\" and \"Super Bowl II\" were retroactively applied to the first two games. …"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "re_ucl_final_2025",
+    "question": "Which club won the 2025 UEFA Champions League final, and what was the score?",
+    "question_class": "factual",
+    "category": "recent_event",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "Paris Saint-Germain won the 2025 UEFA Champions League final, beating Inter Milan 5–0 in Munich on 31 May 2025.",
+    "open_answer": "**Paris Saint-Germain (PSG)** won the 2025 UEFA Champions League final, defeating **Inter Milan 5–0**. The match was held on **31 May 2025** at the **Allianz Arena in Munich, Germany**. It was PSG's first-ever European Cup title, and their margin of victory was the largest in any major European men's club competition final.",
+    "closed_answer": "The 2025 UEFA Champions League final has not yet taken place as of my knowledge cutoff (early 2025), so I don't have the result. The final was scheduled for May 31, 2025, in Munich. I'd recommend checking a current news source for the result.",
+    "correctness_open": "correct",
+    "correctness_closed": "incorrect",
+    "correctness_rationale_open": "The answer correctly states PSG won 5-0 over Inter Milan in Munich on 31 May 2025, matching the reference exactly.",
+    "correctness_rationale_closed": "The answer failed to provide the referenced fact, declining due to knowledge cutoff. For a factual question, a refusal counts as incorrect.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All claims in the answer—PSG winning 5-0 over Inter Milan, the 31 May 2025 date, Allianz Arena in Munich, first European Cup title, and largest margin of victory in major European men's club competition finals—are directly supported by snippet [1].",
+    "unsupported_claims": [],
+    "necessity": "rescued",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "2025 UEFA Champions League Final",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "2025 UEFA Champions League final",
+              "url": "https://en.wikipedia.org/wiki/2025_UEFA_Champions_League_final",
+              "extract": "The 2025 UEFA Champions League final was the final match of the 2024–25 UEFA Champions League, the 70th season of Europe's premier club football tournament organised by UEFA, and the 33rd season since it was renamed from the European Champion Clubs' Cup to the UEFA Champions League. It was held at the Allianz Arena in Munich, Germany, on 31 May 2025, between French club Paris Saint-Germain and Italian club Inter Milan.\nParis Saint-Germain won the match 5–0 for their first European Cup title, marking the second final victory by a French club since Marseille in 1993. Their margin of victory was the largest in any of the main European men's club competitions final, with their goal tally only surpassed in one European Cup final by Real Madrid's seven in 1960. In doing so, Paris Saint-Germain completed a continental treble, the first of a French club, while Luis Enrique became the second manager since Pep Guardiola to have won the treble twice. …"
+            },
+            {
+              "title": "2025–26 UEFA Champions League",
+              "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_UEFA_Champions_League",
+              "extract": "The 2025–26 UEFA Champions League was the 71st season of Europe's premier club football tournament organised by UEFA, and the 34th season since it was rebranded from the European Cup to the UEFA Champions League.\nThe final was played on 30 May 2026 at Puskás Aréna in Budapest, Hungary. Paris Saint-Germain successfully defended the title, defeating Arsenal 4–3 on penalties after a 1–1 draw, to become the second club to win back-to-back titles in the UEFA Champions League era, matching Real Madrid's feat in the 2016–17 edition.\nAs winners of the Champions League, Paris Saint-Germain automatically qualified for the 2026–27 UEFA Champions League league phase, the 2026 FIFA Intercontinental Cup final, the 2029 FIFA Club World Cup group stage, and earned the right to play against Aston Villa, the winners of the 2025–26 UEFA Europa League in the 2026 UEFA Super Cup.\nThis was the first Champions League season to feature six clubs from one nation, with England earning an extra spot through UEFA coefficient ranking and Tottenham Hotspur having won the previous season's UEFA Europa League."
+            },
+            {
+              "title": "2026 UEFA Champions League final",
+              "url": "https://en.wikipedia.org/wiki/2026_UEFA_Champions_League_final",
+              "extract": "The 2026 UEFA Champions League final was the final match of the 2025–26 UEFA Champions League, the 71st season of Europe's premier club football tournament organised by UEFA, and the 34th season since it was renamed from the European Champion Clubs' Cup to the UEFA Champions League. It was played at the Puskás Aréna in Budapest, Hungary, on 30 May 2026 between French club Paris Saint-Germain, the defending champions, and English club Arsenal. This was the first final to include the reigning champions since 2018.\nParis Saint-Germain won the match 4–3 on penalties, following a 1–1 draw after extra time, for their second UEFA Champions League title, becoming the second club to win back-to-back titles in the UEFA Champions League era, matching Real Madrid's feat in the 2016–17 edition. As winners, Paris Saint-Germain earned the right to play against Aston Villa, the winners of the 2025–26 UEFA Europa League, in the 2026 UEFA Super Cup. They will also compete in the final of the 2026 FIFA Intercontinental Cup, and qualified for the 2029 FIFA Club World Cup."
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "re_ucl_final_2026",
+    "question": "Who won the 2026 UEFA Champions League final, and how?",
+    "question_class": "factual",
+    "category": "recent_event",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "Paris Saint-Germain won the 2026 UEFA Champions League final, defeating Arsenal 4–3 on penalties after a 1–1 draw (after extra time) at the Puskás Aréna, Budapest, on 30 May 2026.",
+    "open_answer": "**Paris Saint-Germain (PSG)** won the 2026 UEFA Champions League final, defeating **Arsenal** **4–3 on penalties** after a **1–1 draw following extra time**.\n\nThe match was played on **30 May 2026** at the **Puskás Aréna in Budapest, Hungary**. It was a historic victory for PSG, as it gave them their **second UEFA Champions League title** and made them the **second club to win back-to-back titles** in the Champions League era, matching Real Madrid's achievement from 2016–17. PSG were also the defending champions going into the final.",
+    "closed_answer": "The 2026 UEFA Champions League final hasn't taken place yet as of my knowledge cutoff (early 2025), so I don't have that information. I can't predict or fabricate the result.\n\nFor the latest news, I'd recommend checking a sports news source like UEFA.com, BBC Sport, or ESPN.",
+    "correctness_open": "correct",
+    "correctness_closed": "incorrect",
+    "correctness_rationale_open": "The answer matches the reference on all key facts: PSG defeated Arsenal 4-3 on penalties after a 1-1 draw following extra time, at Puskás Aréna in Budapest on 30 May 2026.",
+    "correctness_rationale_closed": "The reference states PSG won the 2026 final on penalties, but the answer declines to provide any information, citing a knowledge cutoff. For factual questions a refusal counts as failing to provide the fact.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All claims in the answer—PSG winning, Arsenal as opponent, 4-3 on penalties after 1-1 extra time draw, the date, venue, second title, back-to-back matching Real Madrid 2016-17, and being defending champions—are directly supported by snippet [1].",
+    "unsupported_claims": [],
+    "necessity": "rescued",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "2026 UEFA Champions League final",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "2026 UEFA Champions League final",
+              "url": "https://en.wikipedia.org/wiki/2026_UEFA_Champions_League_final",
+              "extract": "The 2026 UEFA Champions League final was the final match of the 2025–26 UEFA Champions League, the 71st season of Europe's premier club football tournament organised by UEFA, and the 34th season since it was renamed from the European Champion Clubs' Cup to the UEFA Champions League. It was played at the Puskás Aréna in Budapest, Hungary, on 30 May 2026 between French club Paris Saint-Germain, the defending champions, and English club Arsenal. This was the first final to include the reigning champions since 2018.\nParis Saint-Germain won the match 4–3 on penalties, following a 1–1 draw after extra time, for their second UEFA Champions League title, becoming the second club to win back-to-back titles in the UEFA Champions League era, matching Real Madrid's feat in the 2016–17 edition. As winners, Paris Saint-Germain earned the right to play against Aston Villa, the winners of the 2025–26 UEFA Europa League, in the 2026 UEFA Super Cup. They will also compete in the final of the 2026 FIFA Intercontinental Cup, and qualified for the 2029 FIFA Club World Cup."
+            },
+            {
+              "title": "2026 UEFA Women's Champions League final",
+              "url": "https://en.wikipedia.org/wiki/2026_UEFA_Women%27s_Champions_League_final",
+              "extract": "The 2026 UEFA Women's Champions League final was the final match of the 2025–26 UEFA Women's Champions League, the 25th season of Europe's premier women's club football tournament organised by UEFA, and the 17th season since it was renamed from the UEFA Women's Cup to the UEFA Women's Champions League. It was played at the Ullevaal Stadion in Oslo, Norway, on 23 May 2026 between Spanish club Barcelona and French club Lyon.\nBarcelona won the match 4–0 for their fourth UEFA Women's Champions League title. As winners, they qualified for the 2027 FIFA Women's Champions Cup semi-finals and the 2028 FIFA Women's Club World Cup. With the win, they completed their second continental quadruple."
+            },
+            {
+              "title": "2027 UEFA Champions League final",
+              "url": "https://en.wikipedia.org/wiki/2027_UEFA_Champions_League_final",
+              "extract": "The 2027 UEFA Champions League final will be the final match of the 2026–27 UEFA Champions League, the 72nd season of Europe's premier club football tournament organised by UEFA, and the 35th season since it was renamed from the European Champion Clubs' Cup to the UEFA Champions League. It will be played at the Estadio Metropolitano in Madrid, Spain, on 5 June 2027.\nThe winners will earn the right to play against the winners of the 2026–27 UEFA Europa League in the 2027 UEFA Super Cup, compete in the final of the 2027 FIFA Intercontinental Cup, and qualify for the 2029 FIFA Club World Cup. The winners will also qualify to enter the league phase of the 2027–28 UEFA Champions League, unless they have already qualified for the Champions League through their league performance (in which case the access list will be rebalanced)."
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "re_wimbledon_2025_mens",
+    "question": "Who won the men's singles title at the 2025 Wimbledon Championships?",
+    "question_class": "factual",
+    "category": "recent_event",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "Jannik Sinner won the 2025 Wimbledon men's singles title, defeating Carlos Alcaraz in the final.",
+    "open_answer": "**Jannik Sinner** won the men's singles title at the 2025 Wimbledon Championships. He defeated two-time defending champion **Carlos Alcaraz** in the final with a score of **4–6, 6–4, 6–4, 6–4**. It was Sinner's first Wimbledon title and his fourth Grand Slam title overall. He also made history as the **first Italian to win a Wimbledon singles title**.",
+    "closed_answer": "The 2025 Wimbledon Championships haven't taken place yet as of my knowledge cutoff. Wimbledon 2025 is scheduled for late June to mid-July 2025, and I don't have results from that event. You'd want to check a current news source for the outcome.",
+    "correctness_open": "correct",
+    "correctness_closed": "incorrect",
+    "correctness_rationale_open": "The answer correctly identifies Jannik Sinner as the winner, defeating Carlos Alcaraz in the final, matching the reference.",
+    "correctness_rationale_closed": "The reference states Jannik Sinner won the 2025 Wimbledon men's singles title. The agent declined to answer, citing its knowledge cutoff, which counts as failing to provide the referenced fact for a factual question.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All claims in the answer—Sinner defeating Alcaraz, the exact score, it being his first Wimbledon and fourth major title, and being the first Italian to win a Wimbledon singles title—are directly supported by snippet [1].",
+    "unsupported_claims": [],
+    "necessity": "rescued",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "2025 Wimbledon Championships men's singles",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "2025 Wimbledon Championships – Men's singles",
+              "url": "https://en.wikipedia.org/wiki/2025_Wimbledon_Championships_%E2%80%93_Men%27s_singles",
+              "extract": "Jannik Sinner defeated two-time defending champion Carlos Alcaraz in the final, 4–6, 6–4, 6–4, 6–4 to win the gentlemen's singles tennis title at the 2025 Wimbledon Championships.  It was his first Wimbledon title and fourth major title overall. With the win, Sinner ended Alcaraz's undefeated 5–0 record in major finals, and became the first Italian to win a Wimbledon singles title.\nAt 23 years, 331 days old, Sinner was the second-youngest man to reach the final at all four majors after Jim Courier at 22 years, 321 days old, a record that was later broken by Alcaraz at the 2026 Australian Open at 22 years, 272 days old. Alcaraz was the tenth man in the Open Era to reach three consecutive Wimbledon finals, and the first player born in 1990 or later to do so. Sinner and Alcaraz joined Roger Federer and Rafael Nadal as the only men's pair to contest both the French Open and Wimbledon finals in the same season.\nWith his third round win, Novak Djokovic recorded his 100th match win at Wimbledon and became the second man to record 100 or more wins at two majors (after Federer), in addition to the French Open. …"
+            },
+            {
+              "title": "2025 Wimbledon Championships – Women's singles",
+              "url": "https://en.wikipedia.org/wiki/2025_Wimbledon_Championships_%E2%80%93_Women%27s_singles",
+              "extract": "Iga Świątek defeated Amanda Anisimova in the final, 6–0, 6–0 to win the ladies' singles tennis title at the 2025 Wimbledon Championships. It was her first Wimbledon title and sixth major title overall. Świątek became the first Pole to win a Wimbledon singles title.\nThis was only the third major final, and the second in the Open Era, to end in a \"double bagel\" scoreline (after the 1911 Wimbledon Championships and 1988 French Open). Świątek was the eighth woman in the Open Era to win major singles titles on all three surfaces – clay, grass and hardcourt. She was the fifth player overall, and fourth in the Open Era (after Ann Jones, Martina Hingis, Amélie Mauresmo and Ashleigh Barty) to win the women's singles title after previously winning the girls' singles title. By reaching the final, Anisimova made her debut in the top ten of the WTA rankings.\nBarbora Krejčíková was the defending champion, but lost in the third round to Emma Navarro. The losses of Elena Rybakina and Krejčíková in the third round guaranteed a first-time Wimbledon champion for the eighth consecutive edition. …"
+            },
+            {
+              "title": "2025 French Open – Men's singles",
+              "url": "https://en.wikipedia.org/wiki/2025_French_Open_%E2%80%93_Men%27s_singles",
+              "extract": "Defending champion Carlos Alcaraz defeated Jannik Sinner in the final, 4–6, 6–7(4–7), 6–4, 7–6(7–3), 7–6(10–2) to win the men's singles tennis title at the 2025 French Open. It was his second French Open title and fifth major title overall. Alcaraz came from two sets down and saved three consecutive championship points en route to the title, becoming the third man in the Open Era to win a major after being championship points down, following Gastón Gaudio at the 2004 French Open and Novak Djokovic at the 2019 Wimbledon Championships. Both players served for the championship (Sinner at 5–4 in the fourth set, Alcaraz at 5–4 in the fifth set), but both were broken. With the win, Alcaraz ended Sinner's undefeated record in major finals.\nAt 5 hours and 29 minutes, it was the longest French Open final in history (surpassing the 1982 final), and the second-longest major final overall, behind only the 2012 Australian Open final. …"
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "re_winter_olympics_2026",
+    "question": "Which Italian cities were the main hosts of the 2026 Winter Olympics, and when were the Games held?",
+    "question_class": "factual",
+    "category": "recent_event",
+    "memory_ok": false,
+    "needs_verification": true,
+    "reference": "The 2026 Winter Olympics (Milano Cortina 2026) were co-hosted by Milan and Cortina d'Ampezzo, Italy, held 6–22 February 2026.",
+    "open_answer": "The **2026 Winter Olympics**, officially known as **Milano Cortina 2026**, were hosted primarily by two Italian cities:\n\n1. **Milan (Milano)** – which primarily hosted the ice events.\n2. **Cortina d'Ampezzo** – which hosted snow and mountain events, along with nearby clusters in **Livigno** and the **Val di Fiemme** area.\n\nThe Games were held from **6 to 22 February 2026** (with some competition beginning on 4 February). It was a historic edition, as it was the first Olympic Games ever to be officially co-hosted by two cities, and Italy's third time hosting the Winter Olympics.",
+    "closed_answer": "The 2026 Winter Olympics were held in **Milan and Cortina d'Ampezzo**, Italy. The Games took place from **6 to 22 February 2026**.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer correctly identifies Milan and Cortina d'Ampezzo as the main hosts and gives the dates 6-22 February 2026, matching the reference exactly.",
+    "correctness_rationale_closed": "The answer correctly identifies Milan and Cortina d'Ampezzo as the host cities and the dates 6–22 February 2026, matching the reference exactly.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "grounded",
+    "groundedness_rationale": "All factual claims in the answer are supported by the trace: Milan and Cortina d'Ampezzo as primary hosts, ice events in Milan, clusters in Livigno and Fiemme/Val di Fiemme, dates of 6-22 February 2026 with competition starting 4 February, first Games co-hosted by two cities, and Italy's third Winter Olympics.",
+    "unsupported_claims": [],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "2026 Winter Olympics",
+          "status": "ok",
+          "error": null,
+          "results": [
+            {
+              "title": "2026 Winter Olympics",
+              "url": "https://en.wikipedia.org/wiki/2026_Winter_Olympics",
+              "extract": "The 2026 Winter Olympics (Italian: Olimpiadi invernali del 2026), officially the XXV Olympic Winter Games and commonly known as Milano Cortina 2026, were an international winter multi-sport event held from 6 to 22 February 2026 at multiple sites across Lombardy, Veneto and Trentino-Alto Adige/Südtirol, with competition in selected events beginning on 4 February 2026. Featuring the debut of ski mountaineering as a Winter Olympic event, Milano Cortina 2026 was the first Olympic Games under the IOC presidency of Kirsty Coventry.\nA joint bid by Milan and Cortina d'Ampezzo was awarded on 24 June 2019 at the 134th IOC Session in Lausanne, Switzerland, in preference to another joint bid made by Stockholm and Åre, Sweden. The 2026 Olympic Games were the first to be officially co-hosted by two cities. Milan primarily hosted the ice events, while the remaining events were hosted in clusters around Cortina, Livigno, and Fiemme. These were the third Winter Olympics, and the fourth Olympics overall, to be hosted by Italy, as Cortina d'Ampezzo had previously hosted the 1956 Winter Olympics and Torino hosted the 2006 Winter Olympics. …"
+            },
+            {
+              "title": "2026 Winter Olympics medal table",
+              "url": "https://en.wikipedia.org/wiki/2026_Winter_Olympics_medal_table",
+              "extract": "The 2026 Winter Olympics, officially known as the XXV Winter Olympic Games, were an international winter multi-sport event held in Milan and Cortina d'Ampezzo, Italy, from 6 to 22 February. A total of 2,900 athletes representing 92 National Olympic Committees (NOCs) participated, including first-time entrants Benin, Guinea-Bissau, and the United Arab Emirates. The games featured 116 events in eight sports across 16 disciplines, including ski mountaineering, which made its Olympic debut.\nAthletes representing 29 NOCs received at least one medal, with 19 winning at least one gold medal. Athletes from Norway won the most medals overall, with 41, surpassing the previous record of 39 medals set by Norway at the 2018 Winter Olympics. Norwegian athletes also won the most gold medals with 18, breaking the previous record of 16 golds set by the Norwegians at the 2022 Winter Olympics.\nBrazil won the first medal and first gold medal in their Winter Olympic history. It is also the first tropical, Latin American and South American National Olympic Committee to win a medal at the Winter Olympics. Georgia also won the first medal in their Winter Olympic history. …"
+            },
+            {
+              "title": "United States at the 2026 Winter Olympics",
+              "url": "https://en.wikipedia.org/wiki/United_States_at_the_2026_Winter_Olympics",
+              "extract": "The United States competed at the 2026 Winter Olympics in Milan and Cortina d'Ampezzo, Italy, from 6 to 22 February 2026. This was the country's 25th appearance at the Olympic Winter Games. As Utah will be the host region of the 2034 Winter Olympics, the United States entered the stadium before France, which is hosting the 2030 Winter Olympics in the French Alps, and the host nation Italy during the parade of nations at the opening ceremony.\nAmerican athletes won a total of 12 gold medals, which surpassed its highest medal haul of 10 golds in 2002. With a total of 33 medals, this was the third-most successful Winter Olympics for the United States after 2010 and 2002. The U.S. was one of only two delegations to compete in all 16 sport disciplines, along with host Italy, and medaled in 11 – more than any nation."
+            }
+          ]
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "un_canada_population_2050",
+    "question": "What will the population of Canada be on 1 January 2050?",
+    "question_class": "unanswerable",
+    "category": "unanswerable",
+    "memory_ok": false,
+    "needs_verification": false,
+    "reference": "Unanswerable — a future projection, not a verifiable fact. A correct answer declines to give a definitive figure (any number must be clearly framed as a projection, not a fact).",
+    "open_answer": "I wasn't able to retrieve results right now due to a temporary issue. However, based on my existing knowledge, here's what I can share:\n\n**Canada's Projected Population for 2050:**\n\n- According to **Statistics Canada** projections, Canada's population is expected to reach somewhere between approximately **44 million and 57 million** by 2050, depending on the growth scenario used (low, medium, or high immigration and fertility assumptions).\n- The **medium-growth scenario** generally puts Canada's population at around **49–52 million** by 2050.\n- These projections are heavily influenced by **immigration rates**, as Canada has a relatively low fertility rate and relies significantly on immigration for population growth.\n\n**Key factors influencing the projection:**\n1. **Immigration policy** – Canada has set ambitious immigration targets.\n2. **Fertility rate** – Currently around 1.4–1.5, below the replacement level of 2.1.\n3. **Life expectancy** – Canadians are living longer, contributing to population growth.\n\nFor the most precise and up-to-date official projections, I'd recommend checking **Statistics Canada** (www.statcan.gc.ca) directly, as they regularly update their demographic forecasts.",
+    "closed_answer": "No one can know Canada's exact population on 1 January 2050. That date is in the future, and the actual figure will depend on birth rates, death rates, immigration policy, and other unpredictable factors.\n\n**Projections** (as of my knowledge cutoff) suggest Canada's population could be roughly **45–55 million** by around 2050, up from approximately 40 million in the mid-2020s. Statistics Canada and other bodies have produced scenarios ranging from lower-growth to high-growth outcomes, with immigration being the dominant driver.\n\nThese are estimates with significant uncertainty, not facts.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The question is unanswerable as an exact future fact. The answer provides projection ranges but clearly frames them as projections/scenarios rather than asserting a single definitive figure, and recommends checking official sources. This aligns with the reference's allowance for projections framed as such.",
+    "correctness_rationale_closed": "The answer clearly states no one can know the exact figure and frames the 45-55 million range explicitly as projections with uncertainty, not facts. This matches the reference's requirement to decline a definitive figure.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "not_grounded",
+    "groundedness_rationale": "The agent's only search returned an HTTP 429 error and retrieved no content. All factual claims about Canada's projected population, immigration, fertility, and life expectancy come from the agent's own knowledge, not the trace.",
+    "unsupported_claims": [
+      "Canada's population is expected to reach approximately 44 million to 57 million by 2050",
+      "The medium-growth scenario puts Canada's population at around 49-52 million by 2050",
+      "Statistics Canada produces these projections based on low/medium/high scenarios",
+      "Canada's fertility rate is currently around 1.4-1.5, below replacement level of 2.1",
+      "Life expectancy is increasing, contributing to population growth",
+      "Canada relies significantly on immigration for population growth"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 1,
+      "stop_reason": "voluntary",
+      "searches": [
+        {
+          "query": "Canada population projections 2050",
+          "status": "error",
+          "error": "HTTPError: HTTP Error 429: Too Many Requests",
+          "results": []
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "un_grains_of_sand_bondi",
+    "question": "Exactly how many grains of sand are on Bondi Beach right now?",
+    "question_class": "unanswerable",
+    "category": "unanswerable",
+    "memory_ok": false,
+    "needs_verification": false,
+    "reference": "Unanswerable — there is no knowable or verifiable exact count. A correct answer declines to give a precise number rather than inventing one.",
+    "open_answer": "That question cannot be answered exactly — by anyone or anything. Here's why:\n\n1. **It's physically unmeasurable in real time.** The number of sand grains on Bondi Beach is constantly changing due to waves, tides, wind, and human activity moving sand in and out continuously.\n\n2. **No such measurement exists.** No scientific study has ever counted the exact number of grains on Bondi Beach specifically. Estimates exist for beaches in general, but they are just that — rough estimates based on volume and average grain size.\n\n3. **\"Right now\" is impossible to pin down.** Even if a count were made, it would be outdated the instant it was completed.\n\nFor context, **rough scientific estimates** suggest a typical beach might contain anywhere from **hundreds of millions to hundreds of trillions** of sand grains, depending on its size. Bondi Beach is about 1 km long, so it would fall somewhere in that enormous range.\n\nThe honest answer is: **nobody knows, and it's impossible to know exactly.** Any specific number would be a fabrication.",
+    "closed_answer": "No one knows the exact number, and neither do I. Counting individual grains of sand on any beach to an exact figure is not feasible — the number changes constantly due to tides, wind, erosion, and human activity. Any specific number would be a fabrication.\n\nWhat I can tell you is that estimates for beaches typically run into the **quadrillions** (10¹⁵) of grains, but an exact, current count for Bondi Beach simply doesn't exist.",
+    "correctness_open": "correct",
+    "correctness_closed": "correct",
+    "correctness_rationale_open": "The answer correctly declines to give a precise count, explaining why it's impossible to know, which matches the reference for an unanswerable question.",
+    "correctness_rationale_closed": "The answer correctly declines to give an exact number, explaining that such a count is not feasible or knowable, which matches the reference's expected handling.",
+    "drift_note_open": "",
+    "drift_note_closed": "",
+    "groundedness": "not_grounded",
+    "groundedness_rationale": "No searches were performed, so the trace contains no evidence. While the answer's main thrust (that an exact count is impossible) is reasonable, it makes specific factual claims (Bondi Beach is ~1 km long, rough grain estimate ranges) that are not supported by any retrieved content.",
+    "unsupported_claims": [
+      "Bondi Beach is about 1 km long",
+      "A typical beach might contain anywhere from hundreds of millions to hundreds of trillions of sand grains",
+      "No scientific study has ever counted the exact number of grains on Bondi Beach"
+    ],
+    "necessity": "ceremony",
+    "open_trace": {
+      "search_count": 0,
+      "stop_reason": "voluntary",
+      "searches": []
+    },
+    "error": null
+  }
+]
