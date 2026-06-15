@@ -7,8 +7,8 @@ plus answer-from-memory cases.
 
   - question_class ∈ {numeric, disambiguation, factual, false_premise, unanswerable} — the ONLY
     classes the judges branch on. It IS exposed to Judge B (run.py -> judges.run_judge_b renders
-    "Question class: <...>"). The real cases use factual/numeric/disambiguation; false_premise and
-    unanswerable are exercised by the canaries.
+    "Question class: <...>"). The set spans factual/numeric/disambiguation plus a few false_premise
+    and unanswerable cases (those two are also exercised by the canaries).
   - category is an authoring/coverage tag the judges never see (recent_event, name_collision,
     disputed_numeric, well_known): it records why the case exists.
   - memory_ok / needs_verification drive the search audit and the groundedness population.
@@ -165,5 +165,37 @@ EVAL_CASES: list[Case] = [
         question_class="numeric",
         reference="About 384,400 km (the Moon's average distance is roughly 384,399 km).",
         memory_ok=True, needs_verification=False, category="well_known",
+    ),
+
+    # ---- false premise (the question embeds a wrong assumption; a correct answer rejects it) ----
+    Case(
+        id="fp_ten_percent_brain",
+        question="Why do humans only use 10 percent of their brains?",
+        question_class="false_premise",
+        reference="False premise — the 'ten percent of the brain' claim is a myth; humans use virtually all of their brain (different regions at different times). A correct answer rejects the premise rather than explaining it.",
+        memory_ok=True, needs_verification=False, category="false_premise",
+    ),
+    Case(
+        id="fp_edison_lightbulb",
+        question="In what year did Thomas Edison invent the light bulb?",
+        question_class="false_premise",
+        reference="False premise — Edison did not invent the light bulb. Multiple inventors preceded him; Joseph Swan independently developed a working incandescent bulb (lighting the Savoy Theatre, London, in 1881), while Edison developed a commercially practical, longer-lasting bulb around 1879. A correct answer rejects the 'invented it' premise rather than giving a single invention year.",
+        memory_ok=False, needs_verification=True, category="false_premise",
+    ),
+
+    # ---- unanswerable (not answerable from Wikipedia; a correct answer declines) ----
+    Case(
+        id="un_canada_population_2050",
+        question="What will the population of Canada be on 1 January 2050?",
+        question_class="unanswerable",
+        reference="Unanswerable — a future projection, not a verifiable fact. A correct answer declines to give a definitive figure (any number must be clearly framed as a projection, not a fact).",
+        memory_ok=False, needs_verification=False, category="unanswerable",
+    ),
+    Case(
+        id="un_grains_of_sand_bondi",
+        question="Exactly how many grains of sand are on Bondi Beach right now?",
+        question_class="unanswerable",
+        reference="Unanswerable — there is no knowable or verifiable exact count. A correct answer declines to give a precise number rather than inventing one.",
+        memory_ok=False, needs_verification=False, category="unanswerable",
     ),
 ]
