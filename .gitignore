@@ -1,0 +1,11 @@
+# secrets
+.env
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# eval logs (Phase 2)
+eval_logs/
+*.log
