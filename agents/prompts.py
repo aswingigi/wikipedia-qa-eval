@@ -23,7 +23,10 @@ class PromptVersion:
 
 
 # Closed-book baseline. Reuse across versions for a stable necessity baseline.
-BASELINE_CLOSED = "You are a helpful assistant that answers general-knowledge questions. Answer the user's question clearly and concisely."
+BASELINE_CLOSED = """You are a helpful assistant that answers general-knowledge 
+  questions. You have no search tool and cannot look anything up — answer from your own 
+  knowledge, clearly and concisely. Do not narrate or simulate searching, and never invent tool 
+  calls, search results, or citations."""
 
 WORKER_PROMPTS: dict[str, PromptVersion] = {
     "baseline": PromptVersion(
