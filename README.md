@@ -7,6 +7,8 @@ retrieval actually adds correctness. Two parts: the **agent** (`agents/`, `cli/`
 
 - Worker model: `claude-sonnet-4-6` · Judge model: `claude-opus-4-8` (both verified live).
 
+See **[FINDINGS.md](FINDINGS.md)** for the eval rationale, results, learnings, and future work.
+
 ## Setup
 ```sh
 python3 -m venv .venv && source .venv/bin/activate
@@ -18,8 +20,8 @@ cp .env.example .env          # then put your real ANTHROPIC_API_KEY in .env
 The worker system prompts are **yours to write**, in `agents/prompts.py`, and they're versioned so
 you can A/B as you iterate. `WORKER_PROMPTS` maps a version name to a `PromptVersion(open, closed)`:
 an open-book prompt (the `search_wikipedia` tool is available) and a closed-book prompt (tools off;
-the retrieval_necessity baseline). A `baseline` version is provided — add new entries as you improve
-the prompt and select one with `--prompt-version`. The Phase-2 eval can sweep `available_versions()`.
+the retrieval_necessity baseline). Versions `baseline` and `oversearch_cut` are provided — add new
+entries as you iterate and select one with `--prompt-version`. The eval can sweep `available_versions()`.
 The CLI refuses to run if the selected version's prompt is empty.
 
 ## Run
@@ -27,7 +29,7 @@ The CLI refuses to run if the selected version's prompt is empty.
 python -m cli.main "When was Alan Turing born?"      # open-book; prints answer + whether search was used
 python -m cli.main "..." --verbose                    # also print the full trace (queries + snippets)
 python -m cli.main "..." --no-tools                   # closed-book run (no retrieval)
-python -m cli.main "..." --prompt-version baseline    # pick a worker prompt version (default: baseline)
+python -m cli.main "..." --prompt-version oversearch_cut  # worker version: baseline | oversearch_cut (default)
 ```
 
 ## Selftest (no API key)
@@ -52,8 +54,10 @@ and canaries (`eval/canaries.py`) are drafted for you to verify/edit.
 # 1. Gate: run the canaries (real judges on synthetic inputs). Prints every verdict and stops.
 python -m eval.run canaries
 # 2. After the gate passes, run the full eval (billed; writes results/<runid>-report.md + -cases.json):
-python -m eval.run full
-# options: --prompt-version, --judge-a-version, --judge-b-version, --concurrency N (default 8)
+python -m eval.run full --concurrency 2
+# options: --prompt-version, --judge-a-version, --judge-b-version, --concurrency N
+# Use a low --concurrency (e.g. 2): the live MediaWiki API rate-limits (HTTP 429) under load,
+# which can degrade a run's retrieval. Defaults: worker oversearch_cut, judges baseline_plus_examples.
 ```
 The canary gate is a hard stop: if any verdict ≠ its expected label it reports and exits non-zero —
 fix the judge prompt, never the expected label. Runs are single-sample (noise is noted in the report).

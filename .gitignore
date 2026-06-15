@@ -6,6 +6,6 @@
 __pycache__/
 *.pyc
 
-# eval logs (Phase 2)
+# eval logs (committed run artifacts under results/ are intentionally NOT ignored)
 eval_logs/
 *.log
