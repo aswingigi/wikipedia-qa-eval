@@ -20,8 +20,9 @@ class GroundednessVerdict(BaseModel):
 
 
 class CorrectnessVerdict(BaseModel):
-    rationale: str
+    correctness_rationale: str
     correctness: Literal["correct", "partially_correct", "incorrect"]
+    drift_note: str  # "" when not applicable; set when the answer contradicts a plausibly-time-varying reference fact
 
 
 def render_trace(trace) -> str:

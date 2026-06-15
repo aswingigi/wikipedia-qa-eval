@@ -65,6 +65,10 @@ def evaluate_case(case, *, client, open_prompt, closed_prompt, judge_a_prompt, j
             open_trace=open_trace, closed_trace=closed_trace,
             correctness_open=cb_open.correctness, correctness_closed=cb_closed.correctness,
             groundedness=ja.groundedness, unsupported_claims=ja.unsupported_claims,
+            correctness_rationale_open=cb_open.correctness_rationale,
+            correctness_rationale_closed=cb_closed.correctness_rationale,
+            drift_note_open=cb_open.drift_note, drift_note_closed=cb_closed.drift_note,
+            groundedness_rationale=ja.rationale,
         )
     except Exception as e:
         return CaseResult(
@@ -207,7 +211,11 @@ def _case_to_dict(r: CaseResult) -> dict:
         "memory_ok": c.memory_ok, "needs_verification": c.needs_verification, "reference": c.reference,
         "open_answer": r.open_answer, "closed_answer": r.closed_answer,
         "correctness_open": r.correctness_open, "correctness_closed": r.correctness_closed,
-        "groundedness": r.groundedness, "unsupported_claims": r.unsupported_claims,
+        "correctness_rationale_open": r.correctness_rationale_open,
+        "correctness_rationale_closed": r.correctness_rationale_closed,
+        "drift_note_open": r.drift_note_open, "drift_note_closed": r.drift_note_closed,
+        "groundedness": r.groundedness, "groundedness_rationale": r.groundedness_rationale,
+        "unsupported_claims": r.unsupported_claims,
         "necessity": r.necessity, "open_trace": _trace_to_dict(r.open_trace), "error": r.error,
     }
 

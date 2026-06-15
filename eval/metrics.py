@@ -22,6 +22,12 @@ class CaseResult:
     correctness_closed: str    # raw 3-way
     groundedness: str          # raw 3-way (open run)
     unsupported_claims: list[str] = field(default_factory=list)
+    # judge feedback (per-case deep-dive only; metrics ignore these)
+    correctness_rationale_open: str = ""
+    correctness_rationale_closed: str = ""
+    drift_note_open: str = ""
+    drift_note_closed: str = ""
+    groundedness_rationale: str = ""
     error: str | None = None
 
     @property
