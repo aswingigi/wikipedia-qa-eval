@@ -13,7 +13,14 @@ See **[Anthropic_Takehome_Submission_Writeup.md](Anthropic_Takehome_Submission_W
 ```sh
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-# create your .env from the template, then put your real ANTHROPIC_API_KEY in it
+```
+Create a `.env` in the project root containing your Anthropic API key:
+```
+ANTHROPIC_API_KEY=your-key-here
+```
+A template ships as `.env.example`, but it's a **hidden dotfile** (leading `.`), so your file browser
+likely won't show it after unzipping — it *is* there. From a terminal you can copy it instead and update the placeholder API key in the copied .env:
+```sh
 cp .env.example .env
 ```
 
@@ -26,13 +33,17 @@ entries as you iterate and select one with `--prompt-version`. The eval can swee
 The CLI refuses to run if the selected version's prompt is empty.
 
 ## Run
+Activate the venv (`source .venv/bin/activate`), then run any of:
 ```sh
-source .venv/bin/activate   #activate the venv
-python -m cli.main "When was Alan Turing born?"     # open-book; prints answer + whether search was used
-python -m cli.main "When was Alan Turing born?" --verbose     # also print the full trace (queries + snippets)
-python -m cli.main "When was Alan Turing born?" --no-tools    # closed-book run (no retrieval)
-python -m cli.main "When was Alan Turing born?" --prompt-version oversearch_cut  # worker version: baseline | oversearch_cut (default)
+python -m cli.main "When was Alan Turing born?"
+python -m cli.main "When was Alan Turing born?" --verbose
+python -m cli.main "When was Alan Turing born?" --no-tools
+python -m cli.main "When was Alan Turing born?" --prompt-version oversearch_cut
 ```
+- no flags — open-book; prints the answer and whether search was used.
+- `--verbose` — also print the full trace (queries + snippets).
+- `--no-tools` — closed-book run (no retrieval).
+- `--prompt-version` — worker version: `baseline` | `oversearch_cut` (default).
 
 ## Selftest (no API key)
 ```sh
@@ -53,14 +64,17 @@ You author the judge prompts (versioned, per judge) in `eval/judge_prompts.py`; 
 and canaries (`eval/canaries.py`) are drafted for you to verify/edit.
 
 ```sh
-# 1. Gate: run the canaries (real judges on synthetic inputs). Prints every verdict and stops.
 python -m eval.run canaries
-# 2. After the gate passes, run the full eval (billed; writes results/<runid>-report.md + -cases.json):
 python -m eval.run full
-# options: --prompt-version, --judge-a-version, --judge-b-version, --concurrency N (default 2)
-# Concurrency defaults to 2 because the live MediaWiki API rate-limits (HTTP 429) under load;
-# raise it only cautiously. Defaults: worker oversearch_cut, judges baseline_plus_examples.
 ```
+1. **Gate** (`canaries`) — runs the real judges on synthetic inputs, prints every verdict, and stops.
+2. **Full run** (`full`) — after the gate passes, runs the eval (billed) and writes
+   `results/<runid>-report.md` + `-cases.json`.
+
+Options: `--prompt-version`, `--judge-a-version`, `--judge-b-version`, `--concurrency N` (default 2 —
+the live MediaWiki API rate-limits, HTTP 429, under load; raise cautiously). Defaults: worker
+`oversearch_cut`, judges `baseline_plus_examples`.
+
 The canary gate is a hard stop: if any verdict ≠ its expected label it reports and exits non-zero —
 fix the judge prompt, never the expected label. Runs are single-sample (noise is noted in the report).
 
