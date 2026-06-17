@@ -9,3 +9,7 @@ __pycache__/
 # eval logs (committed run artifacts under results/ are intentionally NOT ignored)
 eval_logs/
 *.log
+
+# conversation transcripts dumped into the repo by /export (keep them out of the submission)
+*.txt
+!requirements.txt
