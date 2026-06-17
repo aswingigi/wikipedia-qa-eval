@@ -13,7 +13,8 @@ See **[Anthropic_Takehome_Submission_Writeup.md](Anthropic_Takehome_Submission_W
 ```sh
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env          # then put your real ANTHROPIC_API_KEY in .env
+# create your .env from the template, then put your real ANTHROPIC_API_KEY in it
+cp .env.example .env
 ```
 
 ## Worker prompts (versioned)
