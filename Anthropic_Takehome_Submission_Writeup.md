@@ -1,21 +1,33 @@
 # Wikipedia QA Agent and Eval
 
-The Claude Code session ran about 3h 20 mins. Transcripts are in the submission. Worker `claude-sonnet-4-6`, judge `claude-opus-4-8`: Sonnet for a fast, cheap worker, Opus where the grader's accuracy matters most. Live English MediaWiki API, no caching, raw Anthropic SDK, no hosted search or RAG. The full worker and judge prompts are in the repo (`agents/prompts.py`, `eval/judge_prompts.py`).
+The Claude Code session ran about 3h 20 mins. Transcripts are in the submission. Worker claude-sonnet-4-6, judge claude-opus-4-8: Sonnet for a fast, cheap worker, Opus where the grader's accuracy matters most. Live English MediaWiki API, no caching, raw Anthropic SDK, no hosted search or RAG. The full worker and judge prompts are in the repo (agents/prompts.py, eval/judge\_prompts.py).
 
 **The idea.** A retrieval agent can be right for the wrong reason: correct from memory, with the Wikipedia call adding nothing. A plain "was it correct?" eval can't tell a real save from theater, so the headline metric isn't accuracy, it's whether retrieval actually *changed* the answer. The nuance that keeps this honest: a search that didn't change the answer still isn't waste on a non-obvious question, since grounding guards against hallucination. The case to catch is the opposite, where the model knows a fact cold (capital of the USA, meters in a km) and should skip the tool. The eval measures both.
 
 **The system.** A manual tool-use loop takes its tool list and system prompt as explicit inputs, making closed-book (tools off) a first-class mode. It returns a structured trace (queries, snippets, statuses, answer, stop reason), caps searches, and at the cap forces an answer by dropping tools, not swapping the prompt. Prompts live in versioned registries, so every result maps to a known version.
 
-**The prompt and tool definition.** The worker defaults to searching and carves out only a narrow canonical set to answer directly (facts fixed by definition or taught universally). Anything recent, precise, disputed, superlative, name-collision-prone, or possibly false-premised gets searched, and ties break toward searching. That search-biased default is the thesis operationalized: it errs toward grounding, which is why no run showed a hurt. Three behaviors ride on top: cite the retrieved snippets, call out a false premise instead of answering it, and say "I don't know" rather than guess. The closed-book variant is deliberately clean (answer from memory or admit you can't, no fake searching), which keeps the necessity baseline honest. The tool definition is the counterpart: it states only what `search_wikipedia` does, never when to call it, so capability lives in the tool and policy in the prompt, and I can move the search boundary by editing one prompt. The latest prompt can be found [here](https://github.com/aswingigi/wikipedia-qa-eval/blob/9eb421b3bba84a10fda685082bbc722e92d14a6a/agents/prompts.py#L37-L69) and tool definition [here](https://github.com/aswingigi/wikipedia-qa-eval/blob/9eb421b3bba84a10fda685082bbc722e92d14a6a/agents/wikipedia.py#L60-L64).
+**The prompt and tool definition.** The worker defaults to searching and carves out only a narrow canonical set to answer directly (facts fixed by definition or taught universally). Anything recent, precise, disputed, superlative, name-collision-prone, or possibly false-premised gets searched, and ties break toward searching. That search-biased default is the thesis operationalized: it errs toward grounding, which is why no run showed a hurt. Three behaviors ride on top: cite the retrieved snippets, call out a false premise instead of answering it, and say "I don't know" rather than guess. The closed-book variant is deliberately clean (answer from memory or admit you can't, no fake searching), which keeps the necessity baseline honest. The tool definition is the counterpart: it states only what search\_wikipedia does, never when to call it, so capability lives in the tool and policy in the prompt, and I can move the search boundary by editing one prompt. The latest prompt can be found [here](https://github.com/aswingigi/wikipedia-qa-eval/blob/9eb421b3bba84a10fda685082bbc722e92d14a6a/agents/prompts.py#L37-L69) and tool definition [here](https://github.com/aswingigi/wikipedia-qa-eval/blob/9eb421b3bba84a10fda685082bbc722e92d14a6a/agents/wikipedia.py#L60-L64).
 
 **The eval (three metrics, headline first).** *Retrieval necessity* runs each case twice, tools on and off, and buckets the pair into rescued (open right, closed wrong), hurt (open wrong, closed right), ceremony (right both ways), both\_wrong (wrong both ways)  
-: it measures whether search changed correctness, not whether a correct string appeared. *Correctness* is a reference-aware judge(i.e it knows the actual answer) branching on question class. *Groundedness* is reference-blind, scored against the trace only, on correct `needs_verification` cases, so `memory_ok` facts with no trace aren't counted as ungrounded.
+: it measures whether search changed correctness, not whether a correct string appeared. *Correctness* is a reference-aware judge(i.e it knows the actual answer) branching on question class. *Groundedness* is reference-blind, scored against the trace only, on correct needs\_verification cases, so memory\_ok facts with no trace aren't counted as ungrounded.
 
 Two judges, because correctness needs the reference and groundedness must never see it: a judge that knows the gold answer marks a claim grounded because it's true, not because the trace backs it, which is the theater I want to catch. Both put the rationale field first, reasoning before they commit. The rule that makes necessity measurable lives in the correctness judge: a refusal scores incorrect on any answerable class, correct only when the case is truly unanswerable, and the judge can't reclassify on its own, which is what forces an honest closed-book refusal on a post-cutoff question to score incorrect and surface the rescued set. All three prompts treat snippets and the answer as data, not instructions, ignoring embedded text that tries to steer the verdict, a guard against injection from retrieved content. Cases are authored for necessity, not difficulty, and every reference was live-verified. A canary gate validates the judges on fixed-label inputs before any billed run, a hard stop I never tuned to pass; it caught two real bugs (a correctness prompt in the groundedness slot, and a default-version typo that would have crashed the run).  
 Latest Groundedness Judge Prompt [here](https://github.com/aswingigi/wikipedia-qa-eval/blob/9eb421b3bba84a10fda685082bbc722e92d14a6a/eval/judge_prompts.py#L34-L66)  
 Latest Correctness Judge Prompt  [here](https://github.com/aswingigi/wikipedia-qa-eval/blob/9eb421b3bba84a10fda685082bbc722e92d14a6a/eval/judge_prompts.py#L134-L205)
 
 **What the evals showed.**
+
+| run | worker | judges | unneeded searches | necessity \[rescued/hurt/ceremony/both\_wrong\] | correctness | grounded \[ideal/verification/theater/contradictory\] |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| 085953 | baseline | baseline | 5 | 7/0/15/0 | 22/22 | 7/4/2/0 |
+| 085231 | oversearch\_cut | baseline | 2 | 7/0/15/0 | 22/22 | 7/4/2/0 |
+| 094506 | baseline | baseline+examples | 5 | 7/0/15/0 | 22/22 | 7/6/0/0 |
+| 093724 | oversearch\_cut | baseline+examples | 2 | 7/0/15/0 | 22/22 | 7/5/1/0 |
+
+Legends:
+
+- *necessity:* rescued (open right, closed wrong), hurt (open wrong, closed right), ceremony (right both ways), both\_wrong (wrong both ways)  
+- *groundedness:* ideal (grounded and needed), verification (grounded but the answer didn't change), theater (not grounded, didn't change: the pure-ceremony case), contradictory (not grounded yet retrieval changed the answer, flagged)
 
 - *The thesis held.* All four runs: rescued 7, hurt 0, ceremony 15, both\_wrong 0\. The rescued 7 are exactly the post-cutoff cases (both 2025 Nobels, the 98th Oscars host, Super Bowl LX, both Champions League finals, 2025 Wimbledon), all wrong closed-book. Retrieval added correctness where memory can't reach and never degraded an answer.  
 - *Over-search, cut by prompt.* The baseline over-searched 5 cases; a prompt that essentially tried to enforce "answer canonical facts directly, search the rest" cut it to 2 at no cost to correctness or necessity.  
@@ -28,20 +40,8 @@ Latest Correctness Judge Prompt  [here](https://github.com/aswingigi/wikipedia-q
 
 **Where the evals falls short currently.** Correctness was 22/22 every run, but the case set was built to test necessity, not to be adversarially hard, so read it as "accurate when it has the facts," not a stress result; it never shows the agent getting a hard question wrong. The real behavioral gap is residual over-search: even the tightened prompt still searches the false\_premise and unanswerable cases, because the prompt itself tells the worker to verify a possibly-false premise before refuting it. And under a transient 429, one early run silently fell back to the stale memorized number despite a prompt rule against exactly that, the honest limit of prompting under tool failure (hence retry and backoff in future work).
 
-**What I'd add.** Multi-sample each cell for confidence instead of single-sample caveats. A multi-judge ensemble for the sensitive groundedness axis. Retry and backoff so a 429 can't push the worker onto memory. A bigger, harder case set per class, revision-id pinning on traces, and a `should-have-searched` precision vs recall derived from the tags versus actual searches.
+**What I'd add.** Multi-sample each cell for confidence instead of single-sample caveats. A multi-judge ensemble for the sensitive groundedness axis. Retry and backoff so a 429 can't push the worker onto memory. A bigger, harder case set per class, revision-id pinning on traces, and a should-have-searched precision vs recall derived from the tags versus actual searches.
 
 **Limitations.** Single-sample, N=22, and noisy at that size (the 2026 Winter Olympics case flipped between rescued and ceremony when the closed model knew Milano Cortina). References are point-in-time snapshots with Wikipedia as the arbiter, groundedness is judge-sensitive, and the worker's exact cutoff is unknown, so a few "recent" cases were partly in memory.
 
-| run | worker | judges | unneeded searches | necessity \[rescued/hurt/ceremony/both\_wrong\] | correctness | grounded \[ideal/verification/theater/contradictory\] |
-| :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| `085953` | baseline | baseline | 5 | 7/0/15/0 | 22/22 | 7/4/2/0 |
-| `085231` | oversearch\_cut | baseline | 2 | 7/0/15/0 | 22/22 | 7/4/2/0 |
-| `094506` | baseline | baseline+examples | 5 | 7/0/15/0 | 22/22 | 7/6/0/0 |
-| `093724` | oversearch\_cut | baseline+examples | 2 | 7/0/15/0 | 22/22 | 7/5/1/0 |
-
-Legends:
-
-- *necessity:* rescued (open right, closed wrong), hurt (open wrong, closed right), ceremony (right both ways), both\_wrong (wrong both ways)  
-- *groundedness:* ideal (grounded and needed), verification (grounded but the answer didn't change), theater (not grounded, didn't change: the pure-ceremony case), contradictory (not grounded yet retrieval changed the answer, flagged)
-
-Reproduce: follow README.md, activate the virtualenv, then `python -m eval.run canaries`, then `python -m eval.run full --prompt-version <v> --judge-a-version <v> --judge-b-version <v> --concurrency 2`.  
+Reproduce: follow README.md, activate the virtualenv, then python \-m eval.run canaries, then python \-m eval.run full \--prompt-version \<v\> \--judge-a-version \<v\> \--judge-b-version \<v\> \--concurrency 2.  
